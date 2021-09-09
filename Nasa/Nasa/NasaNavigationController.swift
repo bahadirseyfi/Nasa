@@ -16,8 +16,8 @@ class NasaNavigationController: UINavigationController {
         interactivePopGestureRecognizer?.delegate = nil
 
         navigationBar.prefersLargeTitles = true
-        navigationBar.barTintColor = .nasaRed
-        navigationBar.tintColor = .white
+        navigationBar.barTintColor = .white
+        navigationBar.tintColor = .nasaOrange
         if #available(iOS 13.0, *) {
             navigationBar.standardAppearance = .nasaDefault
             navigationBar.scrollEdgeAppearance = .nasaDefault
