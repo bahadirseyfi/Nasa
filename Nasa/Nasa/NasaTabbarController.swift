@@ -6,17 +6,22 @@
 //
 
 import UIKit
+import CoreAPI
 
 class NasaTabbarController: UITabBarController {
-    
+
     // MARK: View controllers
     let curiosityViewController = CuriosityViewController()
     let opportunityViewController = OpportunityViewController()
     let spiritViewController = SpiritViewController()
     
+    // MARK: View Models
+    let curiosityViewModel = CuriosityViewModel(networkManager: NetworkManager())
+    
     let nasaNavigationController: NasaNavigationController
     
     init() {
+        curiosityViewController.viewModel = curiosityViewModel
         self.nasaNavigationController = NasaNavigationController(rootViewController: curiosityViewController)
         super.init(nibName: nil, bundle: nil)
     }

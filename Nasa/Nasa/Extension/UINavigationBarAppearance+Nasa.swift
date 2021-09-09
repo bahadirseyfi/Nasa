@@ -13,9 +13,9 @@ extension UINavigationBarAppearance {
     static let nasaDefault: UINavigationBarAppearance = {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.backgroundColor = .nasaRed
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.orange]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.orange]
+        appearance.backgroundColor = .white
         return appearance
     }()
 }
