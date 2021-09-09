@@ -14,10 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var nasaTabBarController: NasaTabbarController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         nasaTabBarController = NasaTabbarController()
         window?.rootViewController = nasaTabBarController
+//        window?.rootViewController = OnboardingPageViewController(transitionStyle: .scroll,
+//                                                                  navigationOrientation: .horizontal,
+//                                                                  options: nil)
         window?.makeKeyAndVisible()
 
         return true
