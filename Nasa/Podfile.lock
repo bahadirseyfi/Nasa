@@ -1,0 +1,36 @@
+PODS:
+  - CHIPageControl (0.1.8):
+    - CHIPageControl/Aji (= 0.1.8)
+    - CHIPageControl/Aleppo (= 0.1.8)
+    - CHIPageControl/Chimayo (= 0.1.8)
+    - CHIPageControl/Fresno (= 0.1.8)
+    - CHIPageControl/Jalapeno (= 0.1.8)
+    - CHIPageControl/Jaloro (= 0.1.8)
+    - CHIPageControl/Paprika (= 0.1.8)
+    - CHIPageControl/Puya (= 0.1.8)
+  - CHIPageControl/Aji (0.1.8)
+  - CHIPageControl/Aleppo (0.1.8)
+  - CHIPageControl/Chimayo (0.1.8)
+  - CHIPageControl/Fresno (0.1.8)
+  - CHIPageControl/Jalapeno (0.1.8)
+  - CHIPageControl/Jaloro (0.1.8)
+  - CHIPageControl/Paprika (0.1.8)
+  - CHIPageControl/Puya (0.1.8)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - CHIPageControl (~> 0.1.3)
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - CHIPageControl
+    - SnapKit
+
+SPEC CHECKSUMS:
+  CHIPageControl: 76b35c8309d8dd155e869c109cc6ffc0aaa465ff
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 96c40f34a2d817aacb305d95ffb31f29ec836ab5
+
+COCOAPODS: 1.10.1
