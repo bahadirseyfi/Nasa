@@ -17,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         nasaTabBarController = NasaTabbarController()
-        window?.rootViewController = nasaTabBarController
-//        window?.rootViewController = OnboardingPageViewController(transitionStyle: .scroll,
-//                                                                  navigationOrientation: .horizontal,
-//                                                                  options: nil)
+//        window?.rootViewController = nasaTabBarController
+        window?.rootViewController = OnboardingPageViewController(transitionStyle: .scroll,
+                                                                  navigationOrientation: .horizontal,
+                                                                  options: nil)
         window?.makeKeyAndVisible()
 
         return true

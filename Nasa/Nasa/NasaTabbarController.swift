@@ -8,12 +8,15 @@
 import UIKit
 import CoreAPI
 
+@available(iOS 13.0, *)
 class NasaTabbarController: UITabBarController {
-
+    
     // MARK: View controllers
-    let curiosityViewController = CuriosityViewController()
-    let opportunityViewController = OpportunityViewController()
-    let spiritViewController = SpiritViewController()
+    let curiosityViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "CuriosityViewController") as! CuriosityViewController
+    
+    let opportunityViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "OpportunityViewController") as! OpportunityViewController
+    
+    let spiritViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "SpiritViewController") as! SpiritViewController
     
     // MARK: View Models
     let curiosityViewModel = CuriosityViewModel(networkManager: NetworkManager())
@@ -32,31 +35,42 @@ class NasaTabbarController: UITabBarController {
     
     override func viewDidLoad() {
         delegate = self
-
+        
         nasaNavigationController.delegate = self
         nasaNavigationController.tabBarItem = UITabBarItem(
             title: nil,
-            image: UIImage(systemName: "paperplane.fill"),
+            image: UIImage(named: "tab1"),
             tag: 0
         )
         
         let opportunityNavigationController = NasaNavigationController(rootViewController: opportunityViewController)
-        opportunityNavigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "ticket.fill"), tag: 1)
+        
+        opportunityNavigationController.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(named: "tab2"),
+            tag: 1
+        )
         
         let spiritNavigationController = NasaNavigationController(rootViewController: spiritViewController)
-        spiritNavigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "powersleep"), tag: 2)
-
+        
+        spiritNavigationController.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(named: "tab3"),
+            tag: 2
+        )
+        
         let navigationControllers = [
             nasaNavigationController,
             opportunityNavigationController,
             spiritNavigationController
         ]
+        
         navigationControllers.forEach {
             $0.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
         }
-
+        
         setViewControllers(navigationControllers, animated: false)
-
+        
         tabBar.barTintColor = .white
         tabBar.tintColor = .nasaOrange
         tabBar.shadowImage = UIImage()
@@ -67,7 +81,7 @@ class NasaTabbarController: UITabBarController {
     ) -> UIInterfaceOrientationMask {
         .portrait
     }
-
+    
     func tabBarControllerPreferredInterfaceOrientationForPresentation(
         _ tabBarController: UITabBarController
     ) -> UIInterfaceOrientation {
@@ -81,11 +95,11 @@ extension NasaTabbarController: UITabBarControllerDelegate {
         shouldSelect viewController: UIViewController
     ) -> Bool {
         if selectedViewController === viewController,
-            viewController === nasaNavigationController {
+           viewController === nasaNavigationController {
             if nasaNavigationController.viewControllers.count > 1 {
                 nasaNavigationController.popViewController(animated: true)
             } else {
-
+                
             }
         }
         return true
@@ -93,7 +107,7 @@ extension NasaTabbarController: UITabBarControllerDelegate {
 }
 
 extension NasaTabbarController: UINavigationControllerDelegate {
-
+    
     func navigationController(
         _ navigationController: UINavigationController,
         willShow viewController: UIViewController,

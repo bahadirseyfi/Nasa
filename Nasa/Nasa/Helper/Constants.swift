@@ -10,7 +10,8 @@ struct Constants {
     struct Network {
         static let baseUrlRovers = "https://api.nasa.gov/mars-photos/api/v1/rovers/"
         static let spirit = "spirit/"
-        static let apiKey = "DEMO_KEY"
+        static let apiKey = "biqg3VBwvmwDxkwey8vrai2QcjcW9841KigdJ1Za"
+        static let apiKey2 = "cyeeGRcj4ubgT6NRKCKZUY9CxGMA0YmWVx2O7tNv"
     }
     
     struct Style {

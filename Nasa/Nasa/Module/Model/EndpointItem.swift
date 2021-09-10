@@ -8,19 +8,19 @@
 import Foundation
 import CoreAPI
 
-enum SpiritEndpointItem: Endpoint {
+enum EndpointItem: Endpoint {
     
-    case opportunity
-    case curiosity
+    case curiosity(page: String, filter: String)
+    case opportunity    
     case spirit
     
     var baseUrl: String { Constants.Network.baseUrlRovers }
     
     var method: HTTPMethod {
         switch self {
-        case .spirit:
-            return .get
         case .curiosity:
+            return .get
+        case .spirit:
             return .get
         case .opportunity:
             return .get
@@ -29,10 +29,11 @@ enum SpiritEndpointItem: Endpoint {
     
     var path: String {
         switch self {
+        case .curiosity(let page, let filter):
+            return "curiosity/photos?sol=1000&\(filter)api_key=\(Constants.Network.apiKey2)&page=\(page)"
+//          return "curiosity/photos?sol=1000&\(filter)api_key=DEMO_KEY&page=\(page)"
         case .spirit:
             return "spirit/photos?sol=1000&api_key=\(Constants.Network.apiKey)&page=1"
-        case .curiosity:
-            return "curiosity/photos?sol=1000&api_key=\(Constants.Network.apiKey)&page=1"
         case .opportunity:
             return "opportunity/photos?sol=1000&api_key=\(Constants.Network.apiKey)&page=1"
         }

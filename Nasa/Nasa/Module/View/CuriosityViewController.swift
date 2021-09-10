@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Hero
 import CoreAPI
 
 final class CuriosityViewController: UIViewController {
-        
-    var collectionView: UICollectionView!
+    
+    @IBOutlet private weak var headerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var photosCollectionView: UICollectionView!
+    @IBOutlet private weak var filterCollectionView: UICollectionView!
     
     var viewModel: CuriosityViewModelProtocol! {
         didSet {
@@ -31,68 +34,140 @@ final class CuriosityViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+extension CuriosityViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if collectionView == filterCollectionView {
+            return .init(width: 150, height: 40)
+        } else {
+            let size = viewModel.calculateCellSize(collectionViewWidth: Double(collectionView.frame.size.width))
+            return .init(width: size.width, height: size.height)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        .init(top: .zero, left: CGFloat(viewModel.cellPadding), bottom: .zero, right: CGFloat(viewModel.cellPadding))
+    }
+}
+
 // MARK: - UICollectionViewDataSource
 extension CuriosityViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.numberOfItems
+        if collectionView == filterCollectionView {
+            return Filter.curiosity.cameras().count
+        } else {
+            return viewModel.numberOfItems
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CuriosityViewCell.reuseIdentifier,
-                                                      for: indexPath) as! CuriosityViewCell
-        if let photos = viewModel.photo(indexPath.item) {
-            cell.viewModel = CuriosityCellViewModel(roverPhotos: photos)
+        if collectionView == filterCollectionView {
+            let cell = filterCollectionView.dequeCell(cellType: FilterCell.self, indexPath: indexPath)
+            let arr = Filter.curiosity.cameras()
+            cell.titleLabel.text = arr[indexPath.item].rawValue
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CuriosityViewCell.reuseIdentifier,
+                                                          for: indexPath) as! CuriosityViewCell
+            if let photos = viewModel.photo(indexPath.item) {
+                cell.viewModel = CuriosityCellViewModel(roverPhotos: photos)
+            }
+            
+            if !cell.isAnimated {
+                UIView.animate(withDuration: 0.5, delay: 0.5 * Double(indexPath.row), usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: indexPath.row % 2 == 0 ? .transitionFlipFromLeft : .transitionFlipFromRight, animations: {
+                    
+                    if indexPath.row % 2 == 0 {
+                        AnimationUtility.viewSlideInFromLeft(toRight: cell)
+                    }
+                    else {
+                        AnimationUtility.viewSlideInFromRight(toLeft: cell)
+                    }
+                }, completion: { (done) in
+                    cell.isAnimated = true
+                })
+            }
+            return cell
         }
-        
-        if !cell.isAnimated {
-            UIView.animate(withDuration: 0.5, delay: 0.5 * Double(indexPath.row), usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: indexPath.row % 2 == 0 ? .transitionFlipFromLeft : .transitionFlipFromRight, animations: {
-                
-                if indexPath.row % 2 == 0 {
-                    AnimationUtility.viewSlideInFromLeft(toRight: cell)
-                }
-                else {
-                    AnimationUtility.viewSlideInFromRight(toLeft: cell)
-                }
-            }, completion: { (done) in
-                cell.isAnimated = true
-            })
-        }
-        
-        return cell
     }
 }
 
 // MARK: - UICollectionViewDelegate
 extension CuriosityViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if collectionView == photosCollectionView {
+            viewModel.willDisplay(indexPath.item)
+        }
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let appDevLogo = appDevLogo else {
             return
         }
         
-        let navBarHeight = navigationController?.navigationBar.frame.height ?? 0.0
-        let yPosition = appDevLogoYPosition(navBarHeight: navBarHeight)
+        if scrollView.contentOffset.y > 20 {
+            view.layoutIfNeeded()
+            headerViewHeightConstraint.constant = 5
+            UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction], animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        } else {
+            view.layoutIfNeeded()
+            headerViewHeightConstraint.constant = 20
+            UIView.animate(withDuration: 0.3, delay: 0, options: [.allowUserInteraction], animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
         
-        let navBarWidth = navigationController?.navigationBar.frame.width ?? 0.0
-        let centerOfRightNavigationBarItem = navBarWidth - 40
-        let xPosition = centerOfRightNavigationBarItem - CuriosityViewController.appDevLogoSize / 2
-        
-        appDevLogo.transform = CGAffineTransform(translationX: xPosition, y: yPosition)
-        
-        let startPoint: CGFloat = 60 // px until AppDev logo starts showing
-        let fullyVisiblePoint: CGFloat = 90 // px until AppDev logo is fully visible
-        let maxAlpha: CGFloat = 0.9
-        appDevLogo.alpha = min(maxAlpha, (yPosition - startPoint) / (fullyVisiblePoint - startPoint))
+        //        let navBarHeight = navigationController?.navigationBar.frame.height ?? 0.0
+        //        let yPosition = appDevLogoYPosition(navBarHeight: navBarHeight)
+        //
+        //        let navBarWidth = navigationController?.navigationBar.frame.width ?? 0.0
+        //        let centerOfRightNavigationBarItem = navBarWidth - 40
+        //        let xPosition = centerOfRightNavigationBarItem - CuriosityViewController.appDevLogoSize / 2
+        //
+        //        appDevLogo.transform = CGAffineTransform(translationX: xPosition, y: yPosition)
+        //
+        //        let startPoint: CGFloat = 60 // px until AppDev logo starts showing
+        //        let fullyVisiblePoint: CGFloat = 90 // px until AppDev logo is fully visible
+        //        let maxAlpha: CGFloat = 0.9
+        //        appDevLogo.alpha = min(maxAlpha, (yPosition - startPoint) / (fullyVisiblePoint - startPoint))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        if collectionView == filterCollectionView {
+            let item = collectionView.cellForItem(at: indexPath)
+            if item?.isSelected ?? false {
+                item?.contentView.backgroundColor = .separator
+                viewModel.deSelectFilter()
+                collectionView.deselectItem(at: indexPath, animated: true)
+            } else {
+                for cell in filterCollectionView.visibleCells as [UICollectionViewCell] {
+                    cell.contentView.backgroundColor = .separator
+                }
+                item?.contentView.backgroundColor = .histogramBarBlue
+                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+                return true
+            }
+            return false
+        } else {
+            return true
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         feedbackGenerator.impactOccurred()
         
-        self.view.endEditing(true)
-        let viewController: DetailViewController = DetailViewController.instantiate(storyboards: .detail)
-//        self.navigationController?.pushViewController(viewController, animated: true)
-        present(viewController, animated: true, completion: nil)
+        if collectionView == filterCollectionView {
+            viewModel.filterFetch(indexPath.item)
+        } else {
+            self.view.endEditing(true)
+            let viewController: DetailViewController = DetailViewController.instantiate(storyboards: .detail)
+            //self.navigationController?.pushViewController(viewController, animated: true)
+            present(viewController, animated: true, completion: nil)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
@@ -138,7 +213,12 @@ extension CuriosityViewController: UICollectionViewDelegate {
 extension CuriosityViewController: CuriosityViewModelDelegate {
     func prepareNavigation() {
         navigationItem.title = Constants.Style.Text.Bar.curiosity
-        view.backgroundColor = .nasaGreen
+        view.backgroundColor = .wash
+        
+        let heroEnabled = !UIAccessibility.isReduceMotionEnabled
+        navigationController?.hero.isEnabled = heroEnabled
+        navigationController?.hero.navigationAnimationType = .fade
+        hero.isEnabled = heroEnabled
         
         let logo = UIImageView(image: UIImage(named: "appcentlogo"))
         logo.tintColor = .white
@@ -153,36 +233,27 @@ extension CuriosityViewController: CuriosityViewModelDelegate {
     }
     
     func reloadData() {
-        collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.photosCollectionView.reloadData()
+        }
     }
     
     func prepareCollectionView() {
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), collectionViewLayout: self.layout())
-        view.addSubview(collectionView)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib.loadNib(name: CuriosityViewCell.reuseIdentifier), forCellWithReuseIdentifier: CuriosityViewCell.reuseIdentifier)
-        collectionView.backgroundColor = .clear
+        photosCollectionView.delegate = self
+        photosCollectionView.dataSource = self
+        
+        filterCollectionView.dataSource = self
+        filterCollectionView.delegate = self
+        
+        filterCollectionView.register(cellType: FilterCell.self)
+        photosCollectionView.register(cellType: CuriosityViewCell.self)
+        
+        photosCollectionView.backgroundColor = .clear
+        filterCollectionView.backgroundColor = .wash
     }
 }
 
 extension CuriosityViewController {
-    func layout() -> UICollectionViewLayout {
-        let flowLayout = UICollectionViewFlowLayout()
-        
-        // Now setup the flowLayout required for drawing the cells
-        let space = 10.0 as CGFloat
-        
-        // Set view cell size
-        flowLayout.itemSize = CGSize(width: 350,height: 175)
-        
-        // Set left and right margins
-        flowLayout.minimumInteritemSpacing = space
-        
-        // Set top and bottom margins
-        flowLayout.minimumLineSpacing = space
-        return flowLayout
-    }
     
     private func appDevLogoYPosition(navBarHeight: CGFloat) -> CGFloat {
         let bottomOffset: CGFloat = 12
@@ -196,13 +267,7 @@ extension CuriosityViewController {
         
         var yPosition: CGFloat
         
-        if navBarHeight < breakPoint {
-            yPosition = navBarHeight
-        } else if navBarHeight < resumePoint {
-            yPosition = breakPoint
-        } else {
-            yPosition = navBarHeight - (resumePoint - breakPoint)
-        }
+        yPosition = navBarHeight < breakPoint ? navBarHeight : navBarHeight - (resumePoint - breakPoint)
         
         yPosition -= CuriosityViewController.appDevLogoSize
         yPosition -= bottomOffset

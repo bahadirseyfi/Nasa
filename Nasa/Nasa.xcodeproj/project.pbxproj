@@ -15,6 +15,11 @@
 		1836F63B26E950C8003E28C0 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 1836F63A26E950C8003E28C0 /* Hero */; };
 		1836F63C26E950C8003E28C0 /* Hero in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 1836F63A26E950C8003E28C0 /* Hero */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		1836F63F26E951E4003E28C0 /* AnimationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1836F63E26E951E4003E28C0 /* AnimationUtility.swift */; };
+		184B58D126EA599B0088A200 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B58D026EA599B0088A200 /* Filter.swift */; };
+		184B58D626EA5EFC0088A200 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B58D426EA5EFC0088A200 /* FilterCell.swift */; };
+		184B58D726EA5EFC0088A200 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184B58D526EA5EFC0088A200 /* FilterCell.xib */; };
+		184B58DA26EB89760088A200 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 184B58D926EB89760088A200 /* NVActivityIndicatorView */; };
+		184B58DD26EB89BC0088A200 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B58DC26EB89BC0088A200 /* ProgressView.swift */; };
 		18CBA33726E95A0C006F639F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBA33626E95A0C006F639F /* OnboardingViewController.swift */; };
 		18CBA33926E95A8E006F639F /* OnboardingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBA33826E95A8E006F639F /* OnboardingInfoViewController.swift */; };
 		18CBA33E26E95E89006F639F /* CoreAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 18CBA33D26E95E89006F639F /* CoreAPI */; };
@@ -38,7 +43,7 @@
 		18D2DA2726E8B94400451E98 /* NasaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA2626E8B94400451E98 /* NasaNavigationController.swift */; };
 		18D2DA2926E8BC6200451E98 /* UIColor+ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA2826E8BC6200451E98 /* UIColor+ColorScheme.swift */; };
 		18D2DA3526E8D17700451E98 /* RoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA3426E8D17700451E98 /* RoverModel.swift */; };
-		18D2DA3726E8D24C00451E98 /* SpiritEndpointItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA3626E8D24C00451E98 /* SpiritEndpointItem.swift */; };
+		18D2DA3726E8D24C00451E98 /* EndpointItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA3626E8D24C00451E98 /* EndpointItem.swift */; };
 		18D2DA3B26E8D2A100451E98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA3A26E8D2A100451E98 /* Constants.swift */; };
 		18D2DA3D26E8D40700451E98 /* CuriosityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA3C26E8D40700451E98 /* CuriosityViewModel.swift */; };
 		18D2DA3F26E8D56D00451E98 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA3E26E8D56D00451E98 /* Collection+Extension.swift */; };
@@ -87,6 +92,10 @@
 		1836F63526E94D95003E28C0 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		1836F63726E94DAE003E28C0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1836F63E26E951E4003E28C0 /* AnimationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationUtility.swift; sourceTree = "<group>"; };
+		184B58D026EA599B0088A200 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		184B58D426EA5EFC0088A200 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		184B58D526EA5EFC0088A200 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
+		184B58DC26EB89BC0088A200 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		18CBA33626E95A0C006F639F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		18CBA33826E95A8E006F639F /* OnboardingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoViewController.swift; sourceTree = "<group>"; };
 		18CBA34326E95FEB006F639F /* transactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transactions.json; sourceTree = "<group>"; };
@@ -114,7 +123,7 @@
 		18D2DA2626E8B94400451E98 /* NasaNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaNavigationController.swift; sourceTree = "<group>"; };
 		18D2DA2826E8BC6200451E98 /* UIColor+ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ColorScheme.swift"; sourceTree = "<group>"; };
 		18D2DA3426E8D17700451E98 /* RoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverModel.swift; sourceTree = "<group>"; };
-		18D2DA3626E8D24C00451E98 /* SpiritEndpointItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritEndpointItem.swift; sourceTree = "<group>"; };
+		18D2DA3626E8D24C00451E98 /* EndpointItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointItem.swift; sourceTree = "<group>"; };
 		18D2DA3A26E8D2A100451E98 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18D2DA3C26E8D40700451E98 /* CuriosityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityViewModel.swift; sourceTree = "<group>"; };
 		18D2DA3E26E8D56D00451E98 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
@@ -135,6 +144,7 @@
 			files = (
 				18CBA34126E95F97006F639F /* Lottie in Frameworks */,
 				18D2DA4E26E8EEA100451E98 /* SDWebImage in Frameworks */,
+				184B58DA26EB89760088A200 /* NVActivityIndicatorView in Frameworks */,
 				1836F63B26E950C8003E28C0 /* Hero in Frameworks */,
 				18CBA33E26E95E89006F639F /* CoreAPI in Frameworks */,
 				12F992F34308F10A242438D0 /* Pods_Nasa.framework in Frameworks */,
@@ -169,7 +179,6 @@
 		1836F63026E9308C003E28C0 /* other */ = {
 			isa = PBXGroup;
 			children = (
-				18D2DA1F26E8B88F00451E98 /* OpportunityViewController.swift */,
 				18D2DA2126E8B89B00451E98 /* SpiritViewController.swift */,
 			);
 			path = other;
@@ -193,6 +202,34 @@
 				1836F63726E94DAE003E28C0 /* DetailViewController.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		184B58D226EA5ED30088A200 /* PhotosCell */ = {
+			isa = PBXGroup;
+			children = (
+				18D2DA4926E8EB2100451E98 /* CuriosityCellViewModel.swift */,
+				18D2DA4326E8DF4500451E98 /* CuriosityViewCell.swift */,
+				18D2DA4426E8DF4500451E98 /* CuriosityViewCell.xib */,
+			);
+			path = PhotosCell;
+			sourceTree = "<group>";
+		};
+		184B58D326EA5EE10088A200 /* FilterCell */ = {
+			isa = PBXGroup;
+			children = (
+				184B58D426EA5EFC0088A200 /* FilterCell.swift */,
+				184B58D526EA5EFC0088A200 /* FilterCell.xib */,
+			);
+			path = FilterCell;
+			sourceTree = "<group>";
+		};
+		184B58DB26EB89AA0088A200 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1836F63E26E951E4003E28C0 /* AnimationUtility.swift */,
+				184B58DC26EB89BC0088A200 /* ProgressView.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		18CBA33A26E95C9E006F639F /* Frameworks */ = {
@@ -280,9 +317,9 @@
 		18D2DA1926E8B75C00451E98 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				1836F63E26E951E4003E28C0 /* AnimationUtility.swift */,
-				18D2DA3A26E8D2A100451E98 /* Constants.swift */,
+				184B58DB26EB89AA0088A200 /* Utils */,
 				1836F62D26E91ABC003E28C0 /* Manager */,
+				18D2DA3A26E8D2A100451E98 /* Constants.swift */,
 				18D2D9F326E8B6C500451E98 /* LaunchScreen.storyboard */,
 				18D2D9F126E8B6C500451E98 /* Assets.xcassets */,
 			);
@@ -297,6 +334,7 @@
 				18D2DA2F26E8D0BB00451E98 /* Model */,
 				18D2DA2E26E8D0B500451E98 /* ViewModel */,
 				18D2DA2A26E8C13100451E98 /* View */,
+				184B58D026EA599B0088A200 /* Filter.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -319,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				18D2DA1D26E8B83500451E98 /* CuriosityViewController.swift */,
+				18D2DA1F26E8B88F00451E98 /* OpportunityViewController.swift */,
 				1836F63026E9308C003E28C0 /* other */,
 			);
 			path = View;
@@ -336,7 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				18D2DA3426E8D17700451E98 /* RoverModel.swift */,
-				18D2DA3626E8D24C00451E98 /* SpiritEndpointItem.swift */,
+				18D2DA3626E8D24C00451E98 /* EndpointItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,9 +383,8 @@
 		18D2DA4226E8DF1D00451E98 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				18D2DA4926E8EB2100451E98 /* CuriosityCellViewModel.swift */,
-				18D2DA4326E8DF4500451E98 /* CuriosityViewCell.swift */,
-				18D2DA4426E8DF4500451E98 /* CuriosityViewCell.xib */,
+				184B58D326EA5EE10088A200 /* FilterCell */,
+				184B58D226EA5ED30088A200 /* PhotosCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -384,6 +422,7 @@
 				1836F63A26E950C8003E28C0 /* Hero */,
 				18CBA33D26E95E89006F639F /* CoreAPI */,
 				18CBA34026E95F97006F639F /* Lottie */,
+				184B58D926EB89760088A200 /* NVActivityIndicatorView */,
 			);
 			productName = Nasa;
 			productReference = 18D2D9E526E8B6C500451E98 /* Nasa.app */;
@@ -460,6 +499,7 @@
 				18D2DA4C26E8EEA100451E98 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				1836F63926E950C8003E28C0 /* XCRemoteSwiftPackageReference "Hero" */,
 				18CBA33F26E95F97006F639F /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				184B58D826EB89760088A200 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 18D2D9E626E8B6C500451E98 /* Products */;
 			projectDirPath = "";
@@ -483,6 +523,7 @@
 				18D2D9F526E8B6C500451E98 /* LaunchScreen.storyboard in Resources */,
 				18D2D9F226E8B6C500451E98 /* Assets.xcassets in Resources */,
 				1836F63626E94D95003E28C0 /* Detail.storyboard in Resources */,
+				184B58D726EA5EFC0088A200 /* FilterCell.xib in Resources */,
 				18CBA34726E95FEB006F639F /* collegetown.json in Resources */,
 				18D2D9F026E8B6C500451E98 /* Main.storyboard in Resources */,
 			);
@@ -563,7 +604,7 @@
 				1836F63826E94DAE003E28C0 /* DetailViewController.swift in Sources */,
 				18D2DA1B26E8B7CC00451E98 /* NasaTabbarController.swift in Sources */,
 				18CBA33726E95A0C006F639F /* OnboardingViewController.swift in Sources */,
-				18D2DA3726E8D24C00451E98 /* SpiritEndpointItem.swift in Sources */,
+				18D2DA3726E8D24C00451E98 /* EndpointItem.swift in Sources */,
 				1836F62F26E91BCF003E28C0 /* AlertManager.swift in Sources */,
 				18D2DA3D26E8D40700451E98 /* CuriosityViewModel.swift in Sources */,
 				18D2DA1E26E8B83500451E98 /* CuriosityViewController.swift in Sources */,
@@ -574,7 +615,10 @@
 				18D2DA4526E8DF4500451E98 /* CuriosityViewCell.swift in Sources */,
 				18D2DA2726E8B94400451E98 /* NasaNavigationController.swift in Sources */,
 				18D2D9E926E8B6C500451E98 /* AppDelegate.swift in Sources */,
+				184B58D126EA599B0088A200 /* Filter.swift in Sources */,
 				18CBA34C26E97DEF006F639F /* UICollectionViewCell+Extension.swift in Sources */,
+				184B58DD26EB89BC0088A200 /* ProgressView.swift in Sources */,
+				184B58D626EA5EFC0088A200 /* FilterCell.swift in Sources */,
 				18D2DA4826E8E00100451E98 /* UINib+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,6 +799,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UZPJ8MF9DL;
 				INFOPLIST_FILE = Nasa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -762,7 +807,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bahadirseyfi.Nasa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -775,6 +820,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UZPJ8MF9DL;
 				INFOPLIST_FILE = Nasa/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -782,7 +828,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bahadirseyfi.Nasa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -920,6 +966,14 @@
 				minimumVersion = 1.6.1;
 			};
 		};
+		184B58D826EB89760088A200 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 		18CBA33F26E95F97006F639F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -943,6 +997,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1836F63926E950C8003E28C0 /* XCRemoteSwiftPackageReference "Hero" */;
 			productName = Hero;
+		};
+		184B58D926EB89760088A200 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 184B58D826EB89760088A200 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
 		};
 		18CBA33D26E95E89006F639F /* CoreAPI */ = {
 			isa = XCSwiftPackageProductDependency;
