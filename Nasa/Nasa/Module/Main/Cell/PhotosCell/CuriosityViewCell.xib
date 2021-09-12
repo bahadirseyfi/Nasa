@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CuriosityViewCell" customModule="Nasa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="175"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="175"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MZo-K5-Vqi" userLabel="Container">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="175"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageSample" translatesAutoresizingMaskIntoConstraints="NO" id="qLF-wH-jUh">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="175"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d66-4F-4Cp">
+                                <rect key="frame" x="0.0" y="131.5" width="350" height="43.5"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EfD-YS-j6h">
+                                    <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="systemChromeMaterialDark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qLF-wH-jUh" secondAttribute="bottom" id="0Xt-Hb-Jmi"/>
+                            <constraint firstAttribute="bottom" secondItem="d66-4F-4Cp" secondAttribute="bottom" id="61N-X5-fed"/>
+                            <constraint firstAttribute="trailing" secondItem="d66-4F-4Cp" secondAttribute="trailing" id="6P1-Hu-Kcp"/>
+                            <constraint firstItem="qLF-wH-jUh" firstAttribute="leading" secondItem="MZo-K5-Vqi" secondAttribute="leading" id="9Pm-UE-c4I"/>
+                            <constraint firstItem="d66-4F-4Cp" firstAttribute="leading" secondItem="MZo-K5-Vqi" secondAttribute="leading" id="Lse-vc-slm"/>
+                            <constraint firstItem="d66-4F-4Cp" firstAttribute="height" secondItem="MZo-K5-Vqi" secondAttribute="height" multiplier="0.25" id="jkn-57-SdZ"/>
+                            <constraint firstItem="qLF-wH-jUh" firstAttribute="top" secondItem="MZo-K5-Vqi" secondAttribute="top" id="mnF-wC-Ny9"/>
+                            <constraint firstAttribute="trailing" secondItem="qLF-wH-jUh" secondAttribute="trailing" id="suy-N5-cWa"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="MZo-K5-Vqi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Bcv-kb-aRh"/>
+                <constraint firstItem="MZo-K5-Vqi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JEO-mW-dkh"/>
+                <constraint firstAttribute="bottom" secondItem="MZo-K5-Vqi" secondAttribute="bottom" id="kSx-tU-0dR"/>
+                <constraint firstAttribute="trailing" secondItem="MZo-K5-Vqi" secondAttribute="trailing" id="lMa-z3-RsN"/>
+            </constraints>
+            <size key="customSize" width="350" height="175"/>
+            <connections>
+                <outlet property="containerView" destination="MZo-K5-Vqi" id="Asf-9a-zsM"/>
+                <outlet property="imageView" destination="qLF-wH-jUh" id="Z5m-YM-54U"/>
+            </connections>
+            <point key="canvasLocation" x="221.73913043478262" y="124.21875"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="imageSample" width="1024" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
