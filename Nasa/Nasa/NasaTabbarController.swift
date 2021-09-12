@@ -9,22 +9,29 @@ import UIKit
 import CoreAPI
 
 @available(iOS 13.0, *)
-class NasaTabbarController: UITabBarController {
+final class NasaTabbarController: UITabBarController {
     
     // MARK: View controllers
-    let curiosityViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "CuriosityViewController") as! CuriosityViewController
+    private let curiosityViewController = UIStoryboard(name: Constants.System.Storyboard.main, bundle: .main)
+        .instantiateViewController(identifier: Constants.System.Controller.curiosityViewController) as! CuriosityViewController
     
-    let opportunityViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "OpportunityViewController") as! OpportunityViewController
+    private let opportunityViewController = UIStoryboard(name: Constants.System.Storyboard.main, bundle: .main)
+        .instantiateViewController(identifier: Constants.System.Controller.opportunityViewController) as! OpportunityViewController
     
-    let spiritViewController = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(identifier: "SpiritViewController") as! SpiritViewController
+    private let spiritViewController = UIStoryboard(name: Constants.System.Storyboard.main, bundle: .main)
+        .instantiateViewController(identifier: Constants.System.Controller.spiritViewController) as! SpiritViewController
     
     // MARK: View Models
-    let curiosityViewModel = CuriosityViewModel(networkManager: NetworkManager())
+    private let curiosityViewModel = CuriosityViewModel(networkManager: NetworkManager())
+    private let opportunityViewModel = OpportunityViewModel(networkManager: NetworkManager())
+    private let spiritViewModel = SpiritViewModel(networkManager: NetworkManager())
     
-    let nasaNavigationController: NasaNavigationController
+    private let nasaNavigationController: NasaNavigationController
     
     init() {
         curiosityViewController.viewModel = curiosityViewModel
+        opportunityViewController.viewModel = opportunityViewModel
+        spiritViewController.viewModel = spiritViewModel
         self.nasaNavigationController = NasaNavigationController(rootViewController: curiosityViewController)
         super.init(nibName: nil, bundle: nil)
     }
@@ -39,7 +46,7 @@ class NasaTabbarController: UITabBarController {
         nasaNavigationController.delegate = self
         nasaNavigationController.tabBarItem = UITabBarItem(
             title: nil,
-            image: UIImage(named: "tab1"),
+            image: UIImage(named: Constants.Style.Image.Icon.firstTab),
             tag: 0
         )
         
@@ -47,7 +54,7 @@ class NasaTabbarController: UITabBarController {
         
         opportunityNavigationController.tabBarItem = UITabBarItem(
             title: nil,
-            image: UIImage(named: "tab2"),
+            image: UIImage(named: Constants.Style.Image.Icon.secondTab),
             tag: 1
         )
         
@@ -55,7 +62,7 @@ class NasaTabbarController: UITabBarController {
         
         spiritNavigationController.tabBarItem = UITabBarItem(
             title: nil,
-            image: UIImage(named: "tab3"),
+            image: UIImage(named: Constants.Style.Image.Icon.thirdTab),
             tag: 2
         )
         
@@ -71,9 +78,13 @@ class NasaTabbarController: UITabBarController {
         
         setViewControllers(navigationControllers, animated: false)
         
-        tabBar.barTintColor = .white
+        tabBar.barTintColor = .separator
         tabBar.tintColor = .nasaOrange
-        tabBar.shadowImage = UIImage()
+        tabBar.backgroundColor = .clear
+        
+        tabBar.layer.masksToBounds = true
+        tabBar.layer.cornerRadius = 20
+        tabBar.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
     }
     
     func tabBarControllerSupportedInterfaceOrientations(

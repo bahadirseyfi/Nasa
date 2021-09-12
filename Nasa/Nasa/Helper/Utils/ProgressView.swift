@@ -25,7 +25,6 @@ final class ProgressView {
         progressHud.startAnimating()
         keyWindow?.addSubview(progressHud)
         isShowing = true
-        
     }
     
     func hide() {
