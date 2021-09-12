@@ -17,23 +17,24 @@ enum Filter: String {
         case fhaz = "FHAZ"
         case rhaz = "RHAZ"
         case mast = "MAST"
+        case pancam = "PANCAM"
         case chemcam = "CHEMCAM"
         case mahli = "MAHLI"
         case mardi = "MARDI"
         case navcam = "NAVCAM"
+        case minites = "MINITES"
     }
-    
     
     func cameras() -> [Cameras] {
         switch self {
         case .curiosity:
-            let cameras = [Cameras.fhaz, Cameras.rhaz, Cameras.mahli, Cameras.mardi]
+            let cameras = [Cameras.fhaz, Cameras.rhaz, Cameras.mast, Cameras.chemcam, Cameras.mahli, Cameras.mardi, Cameras.navcam]
             return cameras
         case .opportunity:
-            let cameras = [Cameras.mardi]
+            let cameras = [Cameras.fhaz, Cameras.rhaz, Cameras.navcam, Cameras.pancam, Cameras.minites]
             return cameras
         case .spirit:
-            let cameras = [Cameras.mahli, Cameras.mardi]
+            let cameras = [Cameras.fhaz, Cameras.rhaz, Cameras.navcam, Cameras.pancam, Cameras.minites]
             return cameras
         }
     }
