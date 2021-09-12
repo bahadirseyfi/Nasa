@@ -37,8 +37,6 @@ extension UIColor {
 
     static let nasaOrange = UIColor(hex: 0xFF990E)
 
-    static let transparentEateryBlue = UIColor.nasaBlue.withAlphaComponent(0.8)
-
     /// 0x222222
     static let primary = UIColor(hex: 0x222222)
 
@@ -54,34 +52,7 @@ extension UIColor {
     /// 0xF5F5F5
     static let wash = UIColor(hex: 0xF5F5F5)
 
-    /// 0xF8E71C
-    static let favoriteYellow = UIColor(hex: 0xF8E71C)
-
-    /// 0xE1E1E1
-    static let veryLightPink = UIColor(hex: 0xE1E1E1)
-
     /// 0x7d8288
     static let steel = UIColor(hex: 0x7D8288)
 
-}
-
-extension UIImage {
-
-    class func image(withColor color: UIColor) -> UIImage {
-
-        let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
-
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
-
-        let context = UIGraphicsGetCurrentContext()
-
-        color.setFill()
-
-        context?.fill(rect)
-
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return image!
-    }
 }

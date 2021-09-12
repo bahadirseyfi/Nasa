@@ -30,6 +30,7 @@ public final class NetworkManager<EndpointItem: Endpoint> {
                 switch response.result {
                 case .success(let data):
                     do {
+                        print("İSTEK URL: ",endpoint.url)
                         let decodedObject = try JSONDecoder().decode(type, from: data)
                         completion(.success(decodedObject))
                     } catch {

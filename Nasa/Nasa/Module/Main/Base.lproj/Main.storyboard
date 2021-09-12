@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="CuriosityViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="CuriosityViewController" customModule="Nasa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JZP-Km-nw3">
+                                <rect key="frame" x="0.0" y="87" width="414" height="809"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="16" id="k3Z-2V-Zj4">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zMA-AW-Amr">
+                                <rect key="frame" x="0.0" y="49" width="414" height="38"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="V4z-Lr-tz0"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rXJ-z6-fak">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JZP-Km-nw3" firstAttribute="top" secondItem="zMA-AW-Amr" secondAttribute="bottom" id="EM0-kV-Fz0"/>
+                            <constraint firstItem="zMA-AW-Amr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b5s-Uc-WDk"/>
+                            <constraint firstAttribute="bottom" secondItem="JZP-Km-nw3" secondAttribute="bottom" id="bVS-Yt-fLQ"/>
+                            <constraint firstItem="JZP-Km-nw3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kOi-lP-QQB"/>
+                            <constraint firstItem="zMA-AW-Amr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kii-Se-Ka1"/>
+                            <constraint firstItem="zMA-AW-Amr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="lDK-cO-2BW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JZP-Km-nw3" secondAttribute="trailing" id="rEK-fe-NxH"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="tH2-Ni-wN5"/>
+                    <connections>
+                        <outlet property="filterCollectionView" destination="zMA-AW-Amr" id="V8A-Lv-R3t"/>
+                        <outlet property="headerViewHeightConstraint" destination="EM0-kV-Fz0" id="4Ft-Fh-uqz"/>
+                        <outlet property="photosCollectionView" destination="JZP-Km-nw3" id="NOl-ik-Xqa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="65"/>
+        </scene>
+        <!--Opportunity View Controller-->
+        <scene sceneID="eCc-Ya-yv3">
+            <objects>
+                <viewController storyboardIdentifier="OpportunityViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gwp-Lg-5KF" customClass="OpportunityViewController" customModule="Nasa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oS0-LK-r8f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2n-2K-E9Y">
+                                <rect key="frame" x="148" y="244" width="118.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bY6-Ft-uEA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H5a-gG-3mv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="a2n-2K-E9Y" firstAttribute="centerX" secondItem="oS0-LK-r8f" secondAttribute="centerX" id="RgH-ok-vib"/>
+                            <constraint firstItem="a2n-2K-E9Y" firstAttribute="top" secondItem="H5a-gG-3mv" secondAttribute="top" constant="200" id="W07-1V-vvV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="isExistDataLabel" destination="a2n-2K-E9Y" id="vmL-C4-K5w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RBv-0Q-JZ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="65"/>
+        </scene>
+        <!--Spirit View Controller-->
+        <scene sceneID="Kci-0c-Bxf">
+            <objects>
+                <viewController storyboardIdentifier="SpiritViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Krp-HU-viU" customClass="SpiritViewController" customModule="Nasa" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qj7-5p-9SQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mjt-hp-zXE">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Gs-6N-0K0">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ktU-di-eOn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="mjt-hp-zXE" secondAttribute="bottom" id="0dO-Xm-FwV"/>
+                            <constraint firstItem="mjt-hp-zXE" firstAttribute="leading" secondItem="ktU-di-eOn" secondAttribute="leading" id="3Uq-39-Wb9"/>
+                            <constraint firstItem="mjt-hp-zXE" firstAttribute="top" secondItem="ktU-di-eOn" secondAttribute="top" id="4VC-Mw-8cX"/>
+                            <constraint firstItem="ktU-di-eOn" firstAttribute="trailing" secondItem="mjt-hp-zXE" secondAttribute="trailing" id="y2y-6A-12e"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="mjt-hp-zXE" id="z2f-Ig-9E2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TgC-Eh-2pW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1827.5362318840582" y="64.955357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
