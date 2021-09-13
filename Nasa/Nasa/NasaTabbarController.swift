@@ -12,8 +12,7 @@ import CoreAPI
 final class NasaTabbarController: UITabBarController {
     
     // MARK: View controllers
-    private let curiosityViewController = UIStoryboard(name: Constants.System.Storyboard.main, bundle: .main)
-        .instantiateViewController(identifier: Constants.System.Controller.curiosityViewController) as! CuriosityViewController
+    let curiosityVC = CuriosityRouter.createModule()
     
     private let opportunityViewController = UIStoryboard(name: Constants.System.Storyboard.main, bundle: .main)
         .instantiateViewController(identifier: Constants.System.Controller.opportunityViewController) as! OpportunityViewController
@@ -22,17 +21,16 @@ final class NasaTabbarController: UITabBarController {
         .instantiateViewController(identifier: Constants.System.Controller.spiritViewController) as! SpiritViewController
     
     // MARK: View Models
-    private let curiosityViewModel = CuriosityViewModel(networkManager: NetworkManager())
     private let opportunityViewModel = OpportunityViewModel(networkManager: NetworkManager())
     private let spiritViewModel = SpiritViewModel(networkManager: NetworkManager())
     
     private let nasaNavigationController: NasaNavigationController
     
     init() {
-        curiosityViewController.viewModel = curiosityViewModel
         opportunityViewController.viewModel = opportunityViewModel
         spiritViewController.viewModel = spiritViewModel
-        self.nasaNavigationController = NasaNavigationController(rootViewController: curiosityViewController)
+
+        self.nasaNavigationController = NasaNavigationController(rootViewController: curiosityVC)
         super.init(nibName: nil, bundle: nil)
     }
     
