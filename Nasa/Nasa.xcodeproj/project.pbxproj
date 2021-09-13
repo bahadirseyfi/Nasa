@@ -53,7 +53,6 @@
 		18D2DA3526E8D17700451E98 /* RoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA3426E8D17700451E98 /* RoverModel.swift */; };
 		18D2DA3726E8D24C00451E98 /* EndpointItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA3626E8D24C00451E98 /* EndpointItem.swift */; };
 		18D2DA3B26E8D2A100451E98 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA3A26E8D2A100451E98 /* Constants.swift */; };
-		18D2DA3D26E8D40700451E98 /* CuriosityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA3C26E8D40700451E98 /* CuriosityViewModel.swift */; };
 		18D2DA3F26E8D56D00451E98 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA3E26E8D56D00451E98 /* Collection+Extension.swift */; };
 		18D2DA4126E8D9BA00451E98 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA4026E8D9BA00451E98 /* UIViewController+Extension.swift */; };
 		18D2DA4526E8DF4500451E98 /* CuriosityViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2DA4326E8DF4500451E98 /* CuriosityViewCell.swift */; };
@@ -141,7 +140,6 @@
 		18D2DA3426E8D17700451E98 /* RoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverModel.swift; sourceTree = "<group>"; };
 		18D2DA3626E8D24C00451E98 /* EndpointItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointItem.swift; sourceTree = "<group>"; };
 		18D2DA3A26E8D2A100451E98 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		18D2DA3C26E8D40700451E98 /* CuriosityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityViewModel.swift; sourceTree = "<group>"; };
 		18D2DA3E26E8D56D00451E98 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		18D2DA4026E8D9BA00451E98 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		18D2DA4326E8DF4500451E98 /* CuriosityViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityViewCell.swift; sourceTree = "<group>"; };
@@ -260,10 +258,9 @@
 		18614E4E26EE5D0900B01A17 /* Curiosity */ = {
 			isa = PBXGroup;
 			children = (
-				18D2DA3C26E8D40700451E98 /* CuriosityViewModel.swift */,
 				18D2DA1D26E8B83500451E98 /* CuriosityViewController.swift */,
-				18CFCBE726EF8AEF0080D50C /* CuriosityPresenter.swift */,
 				18CFCBE926EF8AFC0080D50C /* CuriosityInteractor.swift */,
+				18CFCBE726EF8AEF0080D50C /* CuriosityPresenter.swift */,
 				18CFCBEB26EF8B280080D50C /* CuriosityRouter.swift */,
 			);
 			path = Curiosity;
@@ -690,7 +687,6 @@
 				1836F62F26E91BCF003E28C0 /* AlertManager.swift in Sources */,
 				189044A526EEA91700B89693 /* DetailViewModel.swift in Sources */,
 				18614E4B26EE00D100B01A17 /* filterBottomSheetViewController.swift in Sources */,
-				18D2DA3D26E8D40700451E98 /* CuriosityViewModel.swift in Sources */,
 				18D2DA1E26E8B83500451E98 /* CuriosityViewController.swift in Sources */,
 				18CFCBEC26EF8B280080D50C /* CuriosityRouter.swift in Sources */,
 				18D2DA3F26E8D56D00451E98 /* Collection+Extension.swift in Sources */,
