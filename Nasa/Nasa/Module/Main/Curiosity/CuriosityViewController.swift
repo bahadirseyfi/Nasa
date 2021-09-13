@@ -9,7 +9,7 @@ import UIKit
 import Hero
 import CoreAPI
 
-protocol CuriosityViewInterface {
+protocol CuriosityViewInterface: AnyObject {
     func prepareNavigation()
     func prepareCollectionView()
     func reloadData()
@@ -21,11 +21,7 @@ final class CuriosityViewController: UIViewController {
     @IBOutlet private weak var photosCollectionView: UICollectionView!
     @IBOutlet private weak var filterCollectionView: UICollectionView!
     
-    var viewModel: CuriosityViewModelProtocol! {
-        didSet {
-            viewModel.delegate = self
-        }
-    }
+    var presenter: CuriosityPresenterInterface!
     
     private var appDevLogo: UIView?
     
@@ -36,11 +32,11 @@ final class CuriosityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.load()
+        presenter.viewDidLoad()
     }
     
     private func redirectTo(index: IndexPath) {
-        if let roverPhoto = viewModel.photo(index.item) {
+        if let roverPhoto = presenter.photo(index.item) {
             let viewModel = DetailViewModel(roverPhotos: roverPhoto)
             let viewController: DetailViewController = DetailViewController.instantiate(storyboards: .detail)
             viewController.viewModel = viewModel
@@ -103,14 +99,14 @@ extension CuriosityViewController: UICollectionViewDelegateFlowLayout {
         if collectionView == filterCollectionView {
             return .init(width: 150, height: 40)
         } else {
-            let size = viewModel.calculateCellSize(collectionViewWidth: Double(collectionView.frame.size.width))
+            let size = presenter.calculateCellSize(collectionViewWidth: Double(collectionView.frame.size.width))
             return .init(width: size.width, height: size.height)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        .init(top: .zero, left: CGFloat(viewModel.cellPadding), bottom: .zero, right: CGFloat(viewModel.cellPadding))
+        .init(top: .zero, left: CGFloat(presenter.cellPadding), bottom: .zero, right: CGFloat(presenter.cellPadding))
     }
 }
 
@@ -120,7 +116,7 @@ extension CuriosityViewController: UICollectionViewDataSource {
         if collectionView == filterCollectionView {
             return Filter.curiosity.cameras().count
         } else {
-            return viewModel.numberOfItems
+            return presenter.numberOfItems
         }
     }
     
@@ -133,7 +129,7 @@ extension CuriosityViewController: UICollectionViewDataSource {
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CuriosityViewCell.reuseIdentifier,
                                                           for: indexPath) as! CuriosityViewCell
-            if let photos = viewModel.photo(indexPath.item) {
+            if let photos = presenter.photo(indexPath.item) {
                 cell.viewModel = CuriosityCellViewModel(roverPhotos: photos)
             }
             
@@ -164,7 +160,7 @@ extension CuriosityViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if collectionView == photosCollectionView {
-            viewModel.willDisplay(indexPath.item)
+            presenter.willDisplay(indexPath.item)
         }
     }
     
@@ -189,7 +185,7 @@ extension CuriosityViewController: UICollectionViewDelegate {
             let item = collectionView.cellForItem(at: indexPath)
             if item?.isSelected ?? false {
                 item?.contentView.backgroundColor = .separator
-                viewModel.deSelectFilter()
+                presenter.deSelectFilter()
                 collectionView.deselectItem(at: indexPath, animated: true)
             } else {
                 for cell in filterCollectionView.visibleCells as [UICollectionViewCell] {
@@ -210,7 +206,7 @@ extension CuriosityViewController: UICollectionViewDelegate {
         feedbackGenerator.impactOccurred()
         
         if collectionView == filterCollectionView {
-            viewModel.filterFetch(indexPath.item)
+            presenter.filterFetch(indexPath.item)
         } else {
             self.view.endEditing(true)
             redirectTo(index: indexPath)
