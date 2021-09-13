@@ -9,6 +9,12 @@ import UIKit
 import Hero
 import CoreAPI
 
+protocol CuriosityViewInterface {
+    func prepareNavigation()
+    func prepareCollectionView()
+    func reloadData()
+}
+
 final class CuriosityViewController: UIViewController {
     
     @IBOutlet private weak var headerViewHeightConstraint: NSLayoutConstraint!
@@ -42,6 +48,50 @@ final class CuriosityViewController: UIViewController {
         } else {
             debugPrint("viewModel.photo(indexPath.item) Index Fault")
         }
+    }
+}
+
+// MARK: - CuriosityViewModelDelegate
+extension CuriosityViewController: CuriosityViewInterface {
+    func prepareNavigation() {
+        navigationItem.title = Constants.Style.Text.Bar.curiosity
+        view.backgroundColor = .wash
+        
+        let heroEnabled = !UIAccessibility.isReduceMotionEnabled
+        navigationController?.hero.isEnabled = heroEnabled
+        navigationController?.hero.navigationAnimationType = .fade
+        hero.isEnabled = heroEnabled
+        
+        let logo = UIImageView(image: UIImage(named: "appcentlogo"))
+        logo.tintColor = .white
+        logo.contentMode = .scaleAspectFit
+        navigationController?.navigationBar.addSubview(logo)
+        
+        logo.translatesAutoresizingMaskIntoConstraints = false
+        logo.widthAnchor.constraint(equalToConstant: appDevLogoSize).isActive = true
+        logo.heightAnchor.constraint(equalToConstant: appDevLogoSize).isActive = true
+        
+        appDevLogo = logo
+    }
+    
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.photosCollectionView.reloadData()
+        }
+    }
+    
+    func prepareCollectionView() {
+        photosCollectionView.delegate = self
+        photosCollectionView.dataSource = self
+        
+        filterCollectionView.dataSource = self
+        filterCollectionView.delegate = self
+        
+        filterCollectionView.register(cellType: FilterCell.self)
+        photosCollectionView.register(cellType: CuriosityViewCell.self)
+        
+        photosCollectionView.backgroundColor = .clear
+        filterCollectionView.backgroundColor = .wash
     }
 }
 
@@ -203,50 +253,6 @@ extension CuriosityViewController: UICollectionViewDelegate {
                 cell.transform = .identity
             }
         )
-    }
-}
-
-// MARK: - CuriosityViewModelDelegate
-extension CuriosityViewController: CuriosityViewModelDelegate {
-    func prepareNavigation() {
-        navigationItem.title = Constants.Style.Text.Bar.curiosity
-        view.backgroundColor = .wash
-        
-        let heroEnabled = !UIAccessibility.isReduceMotionEnabled
-        navigationController?.hero.isEnabled = heroEnabled
-        navigationController?.hero.navigationAnimationType = .fade
-        hero.isEnabled = heroEnabled
-        
-        let logo = UIImageView(image: UIImage(named: "appcentlogo"))
-        logo.tintColor = .white
-        logo.contentMode = .scaleAspectFit
-        navigationController?.navigationBar.addSubview(logo)
-        
-        logo.translatesAutoresizingMaskIntoConstraints = false
-        logo.widthAnchor.constraint(equalToConstant: appDevLogoSize).isActive = true
-        logo.heightAnchor.constraint(equalToConstant: appDevLogoSize).isActive = true
-        
-        appDevLogo = logo
-    }
-    
-    func reloadData() {
-        DispatchQueue.main.async {
-            self.photosCollectionView.reloadData()
-        }
-    }
-    
-    func prepareCollectionView() {
-        photosCollectionView.delegate = self
-        photosCollectionView.dataSource = self
-        
-        filterCollectionView.dataSource = self
-        filterCollectionView.delegate = self
-        
-        filterCollectionView.register(cellType: FilterCell.self)
-        photosCollectionView.register(cellType: CuriosityViewCell.self)
-        
-        photosCollectionView.backgroundColor = .clear
-        filterCollectionView.backgroundColor = .wash
     }
 }
 

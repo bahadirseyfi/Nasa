@@ -34,6 +34,9 @@
 		18CBA34A26E97DE3006F639F /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBA34926E97DE3006F639F /* UICollectionView+Extension.swift */; };
 		18CBA34C26E97DEF006F639F /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBA34B26E97DEF006F639F /* UICollectionViewCell+Extension.swift */; };
 		18CFCBE526EF839E0080D50C /* space.json in Resources */ = {isa = PBXBuildFile; fileRef = 18CFCBE426EF839D0080D50C /* space.json */; };
+		18CFCBE826EF8AEF0080D50C /* CuriosityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBE726EF8AEF0080D50C /* CuriosityPresenter.swift */; };
+		18CFCBEA26EF8AFC0080D50C /* CuriosityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBE926EF8AFC0080D50C /* CuriosityInteractor.swift */; };
+		18CFCBEC26EF8B280080D50C /* CuriosityRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBEB26EF8B280080D50C /* CuriosityRouter.swift */; };
 		18D2D9E926E8B6C500451E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2D9E826E8B6C500451E98 /* AppDelegate.swift */; };
 		18D2D9F026E8B6C500451E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D2D9EE26E8B6C500451E98 /* Main.storyboard */; };
 		18D2D9F226E8B6C500451E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D2D9F126E8B6C500451E98 /* Assets.xcassets */; };
@@ -113,6 +116,9 @@
 		18CBA34926E97DE3006F639F /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		18CBA34B26E97DEF006F639F /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 		18CFCBE426EF839D0080D50C /* space.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = space.json; sourceTree = "<group>"; };
+		18CFCBE726EF8AEF0080D50C /* CuriosityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityPresenter.swift; sourceTree = "<group>"; };
+		18CFCBE926EF8AFC0080D50C /* CuriosityInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityInteractor.swift; sourceTree = "<group>"; };
+		18CFCBEB26EF8B280080D50C /* CuriosityRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityRouter.swift; sourceTree = "<group>"; };
 		18D2D9E526E8B6C500451E98 /* Nasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D2D9E826E8B6C500451E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D2D9EF26E8B6C500451E98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -254,8 +260,11 @@
 		18614E4E26EE5D0900B01A17 /* Curiosity */ = {
 			isa = PBXGroup;
 			children = (
-				18D2DA1D26E8B83500451E98 /* CuriosityViewController.swift */,
 				18D2DA3C26E8D40700451E98 /* CuriosityViewModel.swift */,
+				18D2DA1D26E8B83500451E98 /* CuriosityViewController.swift */,
+				18CFCBE726EF8AEF0080D50C /* CuriosityPresenter.swift */,
+				18CFCBE926EF8AFC0080D50C /* CuriosityInteractor.swift */,
+				18CFCBEB26EF8B280080D50C /* CuriosityRouter.swift */,
 			);
 			path = Curiosity;
 			sourceTree = "<group>";
@@ -283,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				18D2D9EE26E8B6C500451E98 /* Main.storyboard */,
+				18CFCBE626EF8AC20080D50C /* Entity */,
 				18614E4E26EE5D0900B01A17 /* Curiosity */,
 				18614E4F26EE5D1100B01A17 /* Opportunity */,
 				18614E5026EE5D1700B01A17 /* Spirit */,
@@ -342,6 +352,16 @@
 				18CBA34326E95FEB006F639F /* transactions.json */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		18CFCBE626EF8AC20080D50C /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				184B58D026EA599B0088A200 /* Filter.swift */,
+				18D2DA3426E8D17700451E98 /* RoverModel.swift */,
+				18D2DA3626E8D24C00451E98 /* EndpointItem.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		18D2D9DC26E8B6C400451E98 = {
@@ -425,7 +445,6 @@
 			children = (
 				18614E5126EE5D7A00B01A17 /* Main */,
 				1836F63426E94D88003E28C0 /* Detail */,
-				18D2DA2F26E8D0BB00451E98 /* Model */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -439,16 +458,6 @@
 				18614E5626EE65EC00B01A17 /* Collection */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		18D2DA2F26E8D0BB00451E98 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				184B58D026EA599B0088A200 /* Filter.swift */,
-				18D2DA3426E8D17700451E98 /* RoverModel.swift */,
-				18D2DA3626E8D24C00451E98 /* EndpointItem.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		18D2DA4226E8DF1D00451E98 /* Cell */ = {
@@ -667,6 +676,7 @@
 				18D2DA3B26E8D2A100451E98 /* Constants.swift in Sources */,
 				1836F63326E93497003E28C0 /* OnboardingPageViewController.swift in Sources */,
 				184B58DF26EBD6510088A200 /* OpportunityViewModel.swift in Sources */,
+				18CFCBEA26EF8AFC0080D50C /* CuriosityInteractor.swift in Sources */,
 				18D2DA3526E8D17700451E98 /* RoverModel.swift in Sources */,
 				18D2DA2926E8BC6200451E98 /* UIColor+ColorScheme.swift in Sources */,
 				18D2DA2526E8B8FF00451E98 /* UINavigationBarAppearance+Nasa.swift in Sources */,
@@ -682,11 +692,13 @@
 				18614E4B26EE00D100B01A17 /* filterBottomSheetViewController.swift in Sources */,
 				18D2DA3D26E8D40700451E98 /* CuriosityViewModel.swift in Sources */,
 				18D2DA1E26E8B83500451E98 /* CuriosityViewController.swift in Sources */,
+				18CFCBEC26EF8B280080D50C /* CuriosityRouter.swift in Sources */,
 				18D2DA3F26E8D56D00451E98 /* Collection+Extension.swift in Sources */,
 				189044A826EEB16000B89693 /* DateFormatter+Extension.swift in Sources */,
 				1836F63F26E951E4003E28C0 /* AnimationUtility.swift in Sources */,
 				18D2DA2226E8B89B00451E98 /* SpiritViewController.swift in Sources */,
 				18D2DA2026E8B88F00451E98 /* OpportunityViewController.swift in Sources */,
+				18CFCBE826EF8AEF0080D50C /* CuriosityPresenter.swift in Sources */,
 				18D2DA4526E8DF4500451E98 /* CuriosityViewCell.swift in Sources */,
 				18D2DA2726E8B94400451E98 /* NasaNavigationController.swift in Sources */,
 				18D2D9E926E8B6C500451E98 /* AppDelegate.swift in Sources */,
