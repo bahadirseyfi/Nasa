@@ -14,23 +14,16 @@ final class NasaTabbarController: UITabBarController {
     // MARK: Create VIPER Modules
     let curiosityVC = CuriosityRouter.createModule()
     let opportunityVC = OpportunityRouter.createModule()
-
-    
-    private let spiritViewController = UIStoryboard(name: Constants.System.Storyboard.main, bundle: .main)
-        .instantiateViewController(identifier: Constants.System.Controller.spiritViewController) as! SpiritViewController
-    
-    // MARK: View Models
-    private let spiritViewModel = SpiritViewModel(networkManager: NetworkManager())
+    let spiritVC = SpiritRouter.createModule()
     
     private let curiorsityNavigationController: NasaNavigationController
     private let opportunityNavigationController: NasaNavigationController
+    private let spiritNavigationController: NasaNavigationController
     
     init() {
-
-        spiritViewController.viewModel = spiritViewModel
-
         self.curiorsityNavigationController = NasaNavigationController(rootViewController: curiosityVC)
         self.opportunityNavigationController = NasaNavigationController(rootViewController: opportunityVC)
+        self.spiritNavigationController = NasaNavigationController(rootViewController: spiritVC)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -55,8 +48,7 @@ final class NasaTabbarController: UITabBarController {
             tag: 1
         )
         
-        let spiritNavigationController = NasaNavigationController(rootViewController: spiritViewController)
-        
+        spiritNavigationController.delegate = self
         spiritNavigationController.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(named: Constants.Style.Image.Icon.thirdTab),

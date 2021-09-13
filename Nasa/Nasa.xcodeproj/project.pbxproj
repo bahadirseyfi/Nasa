@@ -39,6 +39,9 @@
 		18CFCBEE26EFB4C20080D50C /* OpportunityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBED26EFB4C20080D50C /* OpportunityInteractor.swift */; };
 		18CFCBF026EFB4CD0080D50C /* OpportunityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBEF26EFB4CD0080D50C /* OpportunityPresenter.swift */; };
 		18CFCBF226EFB4D50080D50C /* OpportunityRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBF126EFB4D50080D50C /* OpportunityRouter.swift */; };
+		18CFCBF426EFBC490080D50C /* SpiritInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBF326EFBC490080D50C /* SpiritInteractor.swift */; };
+		18CFCBF626EFBC540080D50C /* SpiritPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBF526EFBC540080D50C /* SpiritPresenter.swift */; };
+		18CFCBF826EFBC5B0080D50C /* SpiritRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBF726EFBC5B0080D50C /* SpiritRouter.swift */; };
 		18D2D9E926E8B6C500451E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2D9E826E8B6C500451E98 /* AppDelegate.swift */; };
 		18D2D9F026E8B6C500451E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D2D9EE26E8B6C500451E98 /* Main.storyboard */; };
 		18D2D9F226E8B6C500451E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D2D9F126E8B6C500451E98 /* Assets.xcassets */; };
@@ -122,6 +125,9 @@
 		18CFCBED26EFB4C20080D50C /* OpportunityInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityInteractor.swift; sourceTree = "<group>"; };
 		18CFCBEF26EFB4CD0080D50C /* OpportunityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityPresenter.swift; sourceTree = "<group>"; };
 		18CFCBF126EFB4D50080D50C /* OpportunityRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityRouter.swift; sourceTree = "<group>"; };
+		18CFCBF326EFBC490080D50C /* SpiritInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritInteractor.swift; sourceTree = "<group>"; };
+		18CFCBF526EFBC540080D50C /* SpiritPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritPresenter.swift; sourceTree = "<group>"; };
+		18CFCBF726EFBC5B0080D50C /* SpiritRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritRouter.swift; sourceTree = "<group>"; };
 		18D2D9E526E8B6C500451E98 /* Nasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D2D9E826E8B6C500451E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D2D9EF26E8B6C500451E98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -286,7 +292,10 @@
 			children = (
 				18D2DA2126E8B89B00451E98 /* SpiritViewController.swift */,
 				18614E4526EDDC5900B01A17 /* SpiritViewModel.swift */,
+				18CFCBF326EFBC490080D50C /* SpiritInteractor.swift */,
 				18614E4926EE00C200B01A17 /* FilterController */,
+				18CFCBF526EFBC540080D50C /* SpiritPresenter.swift */,
+				18CFCBF726EFBC5B0080D50C /* SpiritRouter.swift */,
 			);
 			path = Spirit;
 			sourceTree = "<group>";
@@ -679,6 +688,7 @@
 				18CBA34A26E97DE3006F639F /* UICollectionView+Extension.swift in Sources */,
 				18D2DA3B26E8D2A100451E98 /* Constants.swift in Sources */,
 				18CFCBF026EFB4CD0080D50C /* OpportunityPresenter.swift in Sources */,
+				18CFCBF626EFBC540080D50C /* SpiritPresenter.swift in Sources */,
 				1836F63326E93497003E28C0 /* OnboardingPageViewController.swift in Sources */,
 				18CFCBEA26EF8AFC0080D50C /* CuriosityInteractor.swift in Sources */,
 				18D2DA3526E8D17700451E98 /* RoverModel.swift in Sources */,
@@ -691,6 +701,7 @@
 				18D2DA1B26E8B7CC00451E98 /* NasaTabbarController.swift in Sources */,
 				18CBA33726E95A0C006F639F /* OnboardingViewController.swift in Sources */,
 				18D2DA3726E8D24C00451E98 /* EndpointItem.swift in Sources */,
+				18CFCBF826EFBC5B0080D50C /* SpiritRouter.swift in Sources */,
 				1836F62F26E91BCF003E28C0 /* AlertManager.swift in Sources */,
 				189044A526EEA91700B89693 /* DetailViewModel.swift in Sources */,
 				18614E4B26EE00D100B01A17 /* filterBottomSheetViewController.swift in Sources */,
@@ -704,6 +715,7 @@
 				18CFCBE826EF8AEF0080D50C /* CuriosityPresenter.swift in Sources */,
 				18CFCBEE26EFB4C20080D50C /* OpportunityInteractor.swift in Sources */,
 				18D2DA4526E8DF4500451E98 /* CuriosityViewCell.swift in Sources */,
+				18CFCBF426EFBC490080D50C /* SpiritInteractor.swift in Sources */,
 				18D2DA2726E8B94400451E98 /* NasaNavigationController.swift in Sources */,
 				18D2D9E926E8B6C500451E98 /* AppDelegate.swift in Sources */,
 				184B58D126EA599B0088A200 /* Filter.swift in Sources */,

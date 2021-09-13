@@ -7,15 +7,17 @@
 
 import UIKit
 
+protocol  SpiritViewInterface: AnyObject {
+    func prepareNavigation()
+    func prepareCollectionView()
+    func reloadData()
+}
+
 final class SpiritViewController: UIViewController {
 
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    var viewModel: SpiritViewModelProtocol! {
-        didSet {
-            viewModel.delegate = self
-        }
-    }
+    var presenter: SpiritPresenterInterface!
     
     private var appDevLogo: UIView?
     
@@ -23,7 +25,7 @@ final class SpiritViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.load()
+        presenter.viewDidLoad()
     }
     
     @objc
@@ -40,7 +42,7 @@ final class SpiritViewController: UIViewController {
     }
     
     private func redirectTo(index: IndexPath) {
-        if let roverPhoto = viewModel.photo(index.item) {
+        if let roverPhoto = presenter.photo(index.item) {
             let viewModel = DetailViewModel(roverPhotos: roverPhoto)
             let viewController: DetailViewController = DetailViewController.instantiate(storyboards: .detail)
             viewController.viewModel = viewModel
@@ -54,13 +56,13 @@ final class SpiritViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension SpiritViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.numberOfItems
+        presenter.numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CuriosityViewCell.reuseIdentifier,
                                                       for: indexPath) as! CuriosityViewCell
-        if let photos = viewModel.photo(indexPath.item) {
+        if let photos = presenter.photo(indexPath.item) {
             cell.viewModel = CuriosityCellViewModel(roverPhotos: photos)
         }
         return cell
@@ -102,18 +104,18 @@ extension SpiritViewController: UICollectionViewDelegate {
 extension SpiritViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let size = viewModel.calculateCellSize(collectionViewWidth: Double(collectionView.frame.size.width))
+            let size = presenter.calculateCellSize(collectionViewWidth: Double(collectionView.frame.size.width))
             return .init(width: size.width, height: size.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        .init(top: 15, left: CGFloat(viewModel.cellPadding), bottom: .zero, right: CGFloat(viewModel.cellPadding))
+        .init(top: 15, left: CGFloat(presenter.cellPadding), bottom: .zero, right: CGFloat(presenter.cellPadding))
     }
 }
 
-// MARK: - SpiritViewModelDelegate
-extension SpiritViewController: SpiritViewModelDelegate {
+// MARK: - SpiritViewInterface
+extension SpiritViewController: SpiritViewInterface {
     func prepareNavigation() {
         navigationItem.title = Constants.Style.Text.Bar.spirit
         view.backgroundColor = .steel
@@ -159,6 +161,6 @@ extension SpiritViewController: SpiritViewModelDelegate {
 // MARK: - FilterViewControllerDelegate
 extension SpiritViewController: FilterViewControllerDelegate {
     func didUpdateFilter(index: Int) {
-        viewModel.filterFetch(index)
+        presenter.filterFetch(index)
     }
 }
