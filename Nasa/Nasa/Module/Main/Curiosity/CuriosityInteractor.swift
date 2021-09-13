@@ -15,10 +15,10 @@ protocol CuriosityInteractorInterface {
 
 // CuriosityInteractorOutput -> presenter
 protocol CuriosityInteractorOutput: AnyObject {
-    func handlePhotoResult(_ result: PhotoResult)
+    func handlePhotoResult(_ result: CuriosityPhotoResult)
 }
 
-typealias PhotoResult = Result<RoverModel, APIClientError>
+typealias CuriosityPhotoResult = Result<RoverModel, APIClientError>
 
 final class CuriosityInteractor {
     

@@ -11,26 +11,26 @@ import CoreAPI
 @available(iOS 13.0, *)
 final class NasaTabbarController: UITabBarController {
     
-    // MARK: View controllers
+    // MARK: Create VIPER Modules
     let curiosityVC = CuriosityRouter.createModule()
-    
-    private let opportunityViewController = UIStoryboard(name: Constants.System.Storyboard.main, bundle: .main)
-        .instantiateViewController(identifier: Constants.System.Controller.opportunityViewController) as! OpportunityViewController
+    let opportunityVC = OpportunityRouter.createModule()
+
     
     private let spiritViewController = UIStoryboard(name: Constants.System.Storyboard.main, bundle: .main)
         .instantiateViewController(identifier: Constants.System.Controller.spiritViewController) as! SpiritViewController
     
     // MARK: View Models
-    private let opportunityViewModel = OpportunityViewModel(networkManager: NetworkManager())
     private let spiritViewModel = SpiritViewModel(networkManager: NetworkManager())
     
-    private let nasaNavigationController: NasaNavigationController
+    private let curiorsityNavigationController: NasaNavigationController
+    private let opportunityNavigationController: NasaNavigationController
     
     init() {
-        opportunityViewController.viewModel = opportunityViewModel
+
         spiritViewController.viewModel = spiritViewModel
 
-        self.nasaNavigationController = NasaNavigationController(rootViewController: curiosityVC)
+        self.curiorsityNavigationController = NasaNavigationController(rootViewController: curiosityVC)
+        self.opportunityNavigationController = NasaNavigationController(rootViewController: opportunityVC)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -41,15 +41,14 @@ final class NasaTabbarController: UITabBarController {
     override func viewDidLoad() {
         delegate = self
         
-        nasaNavigationController.delegate = self
-        nasaNavigationController.tabBarItem = UITabBarItem(
+        curiorsityNavigationController.delegate = self
+        curiorsityNavigationController.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(named: Constants.Style.Image.Icon.firstTab),
             tag: 0
         )
-        
-        let opportunityNavigationController = NasaNavigationController(rootViewController: opportunityViewController)
-        
+                
+        opportunityNavigationController.delegate = self
         opportunityNavigationController.tabBarItem = UITabBarItem(
             title: nil,
             image: UIImage(named: Constants.Style.Image.Icon.secondTab),
@@ -65,7 +64,7 @@ final class NasaTabbarController: UITabBarController {
         )
         
         let navigationControllers = [
-            nasaNavigationController,
+            curiorsityNavigationController,
             opportunityNavigationController,
             spiritNavigationController
         ]
@@ -104,9 +103,9 @@ extension NasaTabbarController: UITabBarControllerDelegate {
         shouldSelect viewController: UIViewController
     ) -> Bool {
         if selectedViewController === viewController,
-           viewController === nasaNavigationController {
-            if nasaNavigationController.viewControllers.count > 1 {
-                nasaNavigationController.popViewController(animated: true)
+           viewController === curiorsityNavigationController {
+            if curiorsityNavigationController.viewControllers.count > 1 {
+                curiorsityNavigationController.popViewController(animated: true)
             } else {
                 
             }

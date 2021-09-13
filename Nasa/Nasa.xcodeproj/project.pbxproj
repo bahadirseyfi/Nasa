@@ -20,7 +20,6 @@
 		184B58D726EA5EFC0088A200 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184B58D526EA5EFC0088A200 /* FilterCell.xib */; };
 		184B58DA26EB89760088A200 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 184B58D926EB89760088A200 /* NVActivityIndicatorView */; };
 		184B58DD26EB89BC0088A200 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B58DC26EB89BC0088A200 /* ProgressView.swift */; };
-		184B58DF26EBD6510088A200 /* OpportunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B58DE26EBD6510088A200 /* OpportunityViewModel.swift */; };
 		18614E4626EDDC5900B01A17 /* SpiritViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18614E4526EDDC5900B01A17 /* SpiritViewModel.swift */; };
 		18614E4B26EE00D100B01A17 /* filterBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18614E4A26EE00D100B01A17 /* filterBottomSheetViewController.swift */; };
 		18614E5326EE606A00B01A17 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18614E5226EE606A00B01A17 /* Colors.xcassets */; };
@@ -37,6 +36,9 @@
 		18CFCBE826EF8AEF0080D50C /* CuriosityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBE726EF8AEF0080D50C /* CuriosityPresenter.swift */; };
 		18CFCBEA26EF8AFC0080D50C /* CuriosityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBE926EF8AFC0080D50C /* CuriosityInteractor.swift */; };
 		18CFCBEC26EF8B280080D50C /* CuriosityRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBEB26EF8B280080D50C /* CuriosityRouter.swift */; };
+		18CFCBEE26EFB4C20080D50C /* OpportunityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBED26EFB4C20080D50C /* OpportunityInteractor.swift */; };
+		18CFCBF026EFB4CD0080D50C /* OpportunityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBEF26EFB4CD0080D50C /* OpportunityPresenter.swift */; };
+		18CFCBF226EFB4D50080D50C /* OpportunityRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBF126EFB4D50080D50C /* OpportunityRouter.swift */; };
 		18D2D9E926E8B6C500451E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2D9E826E8B6C500451E98 /* AppDelegate.swift */; };
 		18D2D9F026E8B6C500451E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D2D9EE26E8B6C500451E98 /* Main.storyboard */; };
 		18D2D9F226E8B6C500451E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D2D9F126E8B6C500451E98 /* Assets.xcassets */; };
@@ -103,7 +105,6 @@
 		184B58D426EA5EFC0088A200 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		184B58D526EA5EFC0088A200 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		184B58DC26EB89BC0088A200 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		184B58DE26EBD6510088A200 /* OpportunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityViewModel.swift; sourceTree = "<group>"; };
 		18614E4526EDDC5900B01A17 /* SpiritViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritViewModel.swift; sourceTree = "<group>"; };
 		18614E4A26EE00D100B01A17 /* filterBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterBottomSheetViewController.swift; sourceTree = "<group>"; };
 		18614E5226EE606A00B01A17 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -118,6 +119,9 @@
 		18CFCBE726EF8AEF0080D50C /* CuriosityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityPresenter.swift; sourceTree = "<group>"; };
 		18CFCBE926EF8AFC0080D50C /* CuriosityInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityInteractor.swift; sourceTree = "<group>"; };
 		18CFCBEB26EF8B280080D50C /* CuriosityRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityRouter.swift; sourceTree = "<group>"; };
+		18CFCBED26EFB4C20080D50C /* OpportunityInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityInteractor.swift; sourceTree = "<group>"; };
+		18CFCBEF26EFB4CD0080D50C /* OpportunityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityPresenter.swift; sourceTree = "<group>"; };
+		18CFCBF126EFB4D50080D50C /* OpportunityRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityRouter.swift; sourceTree = "<group>"; };
 		18D2D9E526E8B6C500451E98 /* Nasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D2D9E826E8B6C500451E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D2D9EF26E8B6C500451E98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -270,7 +274,9 @@
 			isa = PBXGroup;
 			children = (
 				18D2DA1F26E8B88F00451E98 /* OpportunityViewController.swift */,
-				184B58DE26EBD6510088A200 /* OpportunityViewModel.swift */,
+				18CFCBED26EFB4C20080D50C /* OpportunityInteractor.swift */,
+				18CFCBEF26EFB4CD0080D50C /* OpportunityPresenter.swift */,
+				18CFCBF126EFB4D50080D50C /* OpportunityRouter.swift */,
 			);
 			path = Opportunity;
 			sourceTree = "<group>";
@@ -669,10 +675,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CFCBF226EFB4D50080D50C /* OpportunityRouter.swift in Sources */,
 				18CBA34A26E97DE3006F639F /* UICollectionView+Extension.swift in Sources */,
 				18D2DA3B26E8D2A100451E98 /* Constants.swift in Sources */,
+				18CFCBF026EFB4CD0080D50C /* OpportunityPresenter.swift in Sources */,
 				1836F63326E93497003E28C0 /* OnboardingPageViewController.swift in Sources */,
-				184B58DF26EBD6510088A200 /* OpportunityViewModel.swift in Sources */,
 				18CFCBEA26EF8AFC0080D50C /* CuriosityInteractor.swift in Sources */,
 				18D2DA3526E8D17700451E98 /* RoverModel.swift in Sources */,
 				18D2DA2926E8BC6200451E98 /* UIColor+ColorScheme.swift in Sources */,
@@ -695,6 +702,7 @@
 				18D2DA2226E8B89B00451E98 /* SpiritViewController.swift in Sources */,
 				18D2DA2026E8B88F00451E98 /* OpportunityViewController.swift in Sources */,
 				18CFCBE826EF8AEF0080D50C /* CuriosityPresenter.swift in Sources */,
+				18CFCBEE26EFB4C20080D50C /* OpportunityInteractor.swift in Sources */,
 				18D2DA4526E8DF4500451E98 /* CuriosityViewCell.swift in Sources */,
 				18D2DA2726E8B94400451E98 /* NasaNavigationController.swift in Sources */,
 				18D2D9E926E8B6C500451E98 /* AppDelegate.swift in Sources */,

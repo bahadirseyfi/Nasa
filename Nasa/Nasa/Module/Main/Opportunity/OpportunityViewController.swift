@@ -22,21 +22,23 @@ extension OpportunityViewController {
     }
 }
 
+protocol OpportunityViewInterface: AnyObject {
+    func prepareNavigation()
+    func prepareCollectionView()
+    func reloadData()
+}
+
 final class OpportunityViewController: UIViewController {
 
     private var collectionView: UICollectionView!
     private var selectedPath: Int = 0
     @IBOutlet private weak var isExistDataLabel: UILabel!
     
-    var viewModel: OpportunityViewModelProtocol! {
-        didSet {
-            viewModel.delegate = self
-        }
-    }
+    var presenter: OpportunityPresenterInterface!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.load()
+        presenter.viewDidLoad()
         view.backgroundColor = .darkNasaBlue
     }
     
@@ -54,13 +56,8 @@ final class OpportunityViewController: UIViewController {
         }
     }
     
-    @objc
-    private func pullToRefresh() {
-        viewModel.pullToRefresh()
-    }
-    
     private func redirectTo(index: IndexPath) {
-        if let roverPhoto = viewModel.photo(index.item) {
+        if let roverPhoto = presenter.photo(index.item) {
             let viewModel = DetailViewModel(roverPhotos: roverPhoto)
             let viewController: DetailViewController = DetailViewController.instantiate(storyboards: .detail)
             viewController.viewModel = viewModel
@@ -71,86 +68,8 @@ final class OpportunityViewController: UIViewController {
     }
 }
 
-// MARK: - UICollectionViewDelegate
-extension OpportunityViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
-                        forItemAt indexPath: IndexPath) {
-        switch indexPath.section {
-        case 0:
-            break
-        case 1:
-            viewModel.willDisplay(indexPath.item)
-            break
-        default:
-            debugPrint("UICollectionViewDelegate")
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        switch indexPath.section {
-        case 0:
-
-            if selectedPath != 0 {
-                viewModel.deSelectFilter()
-                selectedPath = 0
-            } else {
-                selectedPath = indexPath.item
-                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
-                viewModel.filterFetch(indexPath.item)
-            }
-            return false
-        case 1:
-            self.view.endEditing(true)
-            redirectTo(index: indexPath)
-            return true
-        default:
-            return false
-        }
-    }
-}
-
-// MARK: - UICollectionViewDataSource
-extension OpportunityViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return Filter.opportunity.cameras().count
-        default:
-            if viewModel.numberOfItems < 1 {
-                isExistDataLabel.isHidden = false
-                return viewModel.numberOfItems
-            } else {
-                isExistDataLabel.isHidden = true
-                return viewModel.numberOfItems
-            }
-        }
-    }
-  
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.section {
-        case 0:
-            let cell = collectionView.dequeCell(cellType: FilterCell.self, indexPath: indexPath)
-
-            let arr = Filter.curiosity.cameras()
-            cell.titleLabel.text = arr[indexPath.item].rawValue
-            return cell
-        default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CuriosityViewCell.reuseIdentifier,
-                                                          for: indexPath) as! CuriosityViewCell
-            if let photos = viewModel.photo(indexPath.item) {
-                cell.viewModel = CuriosityCellViewModel(roverPhotos: photos)
-            }
-            return cell
-        }
-    }
-}
-
-extension OpportunityViewController: OpportunityViewModelDelegate {
+// MARK: - OpportunityViewInterface
+extension OpportunityViewController: OpportunityViewInterface {
     func prepareNavigation() {
         navigationItem.title = "Opportunity"
         view.backgroundColor = .wash
@@ -188,6 +107,86 @@ extension OpportunityViewController: OpportunityViewModelDelegate {
     }
 }
 
+// MARK: - UICollectionViewDelegate
+extension OpportunityViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            break
+        case 1:
+            presenter.willDisplay(indexPath.item)
+            break
+        default:
+            debugPrint("UICollectionViewDelegate")
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        switch indexPath.section {
+        case 0:
+
+            if selectedPath != 0 {
+                presenter.deSelectFilter()
+                selectedPath = 0
+            } else {
+                selectedPath = indexPath.item
+                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+                presenter.filterFetch(indexPath.item)
+            }
+            return false
+        case 1:
+            self.view.endEditing(true)
+            redirectTo(index: indexPath)
+            return true
+        default:
+            return false
+        }
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension OpportunityViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return Filter.opportunity.cameras().count
+        default:
+            if presenter.numberOfItems < 1 {
+                isExistDataLabel.isHidden = false
+                return presenter.numberOfItems
+            } else {
+                isExistDataLabel.isHidden = true
+                return presenter.numberOfItems
+            }
+        }
+    }
+  
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch indexPath.section {
+        case 0:
+            let cell = collectionView.dequeCell(cellType: FilterCell.self, indexPath: indexPath)
+
+            let arr = Filter.curiosity.cameras()
+            cell.titleLabel.text = arr[indexPath.item].rawValue
+            return cell
+        default:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CuriosityViewCell.reuseIdentifier,
+                                                          for: indexPath) as! CuriosityViewCell
+            if let photos = presenter.photo(indexPath.item) {
+                cell.viewModel = CuriosityCellViewModel(roverPhotos: photos)
+            }
+            return cell
+        }
+    }
+}
+
+// MARK: - OpportunityViewController
 extension OpportunityViewController {
     func createHorizontalLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(Constants.itemSizeWidthDimension),
@@ -213,6 +212,8 @@ extension OpportunityViewController {
     }
 }
 
+// MARK: - OpportunityViewController
+
 extension OpportunityViewController {
     func layout() -> UICollectionViewLayout {
         UICollectionViewCompositionalLayout { sectionIndex, _ in
@@ -230,6 +231,7 @@ extension OpportunityViewController {
     }
 }
 
+// MARK: - OpportunityViewController
 extension OpportunityViewController {
     func makeVerticalLayout() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(Constants.layoutSize),
