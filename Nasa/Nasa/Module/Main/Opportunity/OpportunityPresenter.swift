@@ -1,5 +1,5 @@
 //
-//  CuriosityPresenter.swift
+//  OpportunityPresenter.swift
 //  Nasa
 //
 //  Created by bahadir on 13.09.2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension CuriosityPresenter {
+extension OpportunityPresenter {
     fileprivate enum Constants {
         static let cellLeftPadding: Double = 15
         static let cellRightPadding: Double = 15
@@ -18,7 +18,7 @@ extension CuriosityPresenter {
     }
 }
 
-protocol CuriosityPresenterInterface {
+protocol OpportunityPresenterInterface {
     var numberOfItems: Int { get }
     var cellPadding: Double { get }
     func viewDidLoad()
@@ -31,17 +31,17 @@ protocol CuriosityPresenterInterface {
     func deSelectFilter()
 }
 
-final class CuriosityPresenter {
-    weak var view: CuriosityViewInterface?
-    private let interactor: CuriosityInteractorInterface
+final class OpportunityPresenter {
+    weak var view: OpportunityViewInterface?
+    private let interactor: OpportunityInteractorInterface
     
     private var href: String = Constants.firstPageHref
     private var filter: String = Constants.filter
     
     var allPhotos: [RoverPhotos] = []
     
-    init(view: CuriosityViewInterface?,
-         interactor: CuriosityInteractorInterface) {
+    init(view: OpportunityViewInterface?,
+         interactor: OpportunityInteractorInterface) {
         self.view = view
         self.interactor = interactor
     }
@@ -52,7 +52,7 @@ final class CuriosityPresenter {
     }
 }
 
-extension CuriosityPresenter: CuriosityPresenterInterface {
+extension OpportunityPresenter: OpportunityPresenterInterface {
     func willDisplay(_ index: Int) {
         if allPhotos.count >= 25 {
             if index == (allPhotos.count - 1) {
@@ -113,8 +113,8 @@ extension CuriosityPresenter: CuriosityPresenterInterface {
     }
 }
 
-extension CuriosityPresenter: CuriosityInteractorOutput {
-    func handlePhotoResult(_ result: CuriosityPhotoResult) {
+extension OpportunityPresenter: OpportunityInteractorOutput {
+    func handlePhotoResult(_ result: OpportunityPhotoResult) {
         self.hideLoading()
         switch result {
         case .success(let response):
