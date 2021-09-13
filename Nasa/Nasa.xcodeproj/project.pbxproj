@@ -31,10 +31,9 @@
 		18CBA33E26E95E89006F639F /* CoreAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 18CBA33D26E95E89006F639F /* CoreAPI */; };
 		18CBA34126E95F97006F639F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 18CBA34026E95F97006F639F /* Lottie */; };
 		18CBA34626E95FEB006F639F /* transactions.json in Resources */ = {isa = PBXBuildFile; fileRef = 18CBA34326E95FEB006F639F /* transactions.json */; };
-		18CBA34726E95FEB006F639F /* collegetown.json in Resources */ = {isa = PBXBuildFile; fileRef = 18CBA34426E95FEB006F639F /* collegetown.json */; };
-		18CBA34826E95FEB006F639F /* menus.json in Resources */ = {isa = PBXBuildFile; fileRef = 18CBA34526E95FEB006F639F /* menus.json */; };
 		18CBA34A26E97DE3006F639F /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBA34926E97DE3006F639F /* UICollectionView+Extension.swift */; };
 		18CBA34C26E97DEF006F639F /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBA34B26E97DEF006F639F /* UICollectionViewCell+Extension.swift */; };
+		18CFCBE526EF839E0080D50C /* space.json in Resources */ = {isa = PBXBuildFile; fileRef = 18CFCBE426EF839D0080D50C /* space.json */; };
 		18D2D9E926E8B6C500451E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2D9E826E8B6C500451E98 /* AppDelegate.swift */; };
 		18D2D9F026E8B6C500451E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D2D9EE26E8B6C500451E98 /* Main.storyboard */; };
 		18D2D9F226E8B6C500451E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D2D9F126E8B6C500451E98 /* Assets.xcassets */; };
@@ -111,10 +110,9 @@
 		18CBA33626E95A0C006F639F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		18CBA33826E95A8E006F639F /* OnboardingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoViewController.swift; sourceTree = "<group>"; };
 		18CBA34326E95FEB006F639F /* transactions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transactions.json; sourceTree = "<group>"; };
-		18CBA34426E95FEB006F639F /* collegetown.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collegetown.json; sourceTree = "<group>"; };
-		18CBA34526E95FEB006F639F /* menus.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menus.json; sourceTree = "<group>"; };
 		18CBA34926E97DE3006F639F /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		18CBA34B26E97DEF006F639F /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		18CFCBE426EF839D0080D50C /* space.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = space.json; sourceTree = "<group>"; };
 		18D2D9E526E8B6C500451E98 /* Nasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D2D9E826E8B6C500451E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D2D9EF26E8B6C500451E98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -289,7 +287,6 @@
 				18614E4F26EE5D1100B01A17 /* Opportunity */,
 				18614E5026EE5D1700B01A17 /* Spirit */,
 				18D2DA4226E8DF1D00451E98 /* Cell */,
-				18D2DA2F26E8D0BB00451E98 /* Model */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -341,9 +338,8 @@
 		18CBA34226E95FEB006F639F /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				18CFCBE426EF839D0080D50C /* space.json */,
 				18CBA34326E95FEB006F639F /* transactions.json */,
-				18CBA34426E95FEB006F639F /* collegetown.json */,
-				18CBA34526E95FEB006F639F /* menus.json */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -429,7 +425,7 @@
 			children = (
 				18614E5126EE5D7A00B01A17 /* Main */,
 				1836F63426E94D88003E28C0 /* Detail */,
-				184B58D026EA599B0088A200 /* Filter.swift */,
+				18D2DA2F26E8D0BB00451E98 /* Model */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -448,6 +444,7 @@
 		18D2DA2F26E8D0BB00451E98 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				184B58D026EA599B0088A200 /* Filter.swift */,
 				18D2DA3426E8D17700451E98 /* RoverModel.swift */,
 				18D2DA3626E8D24C00451E98 /* EndpointItem.swift */,
 			);
@@ -592,14 +589,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				18CBA34626E95FEB006F639F /* transactions.json in Resources */,
+				18CFCBE526EF839E0080D50C /* space.json in Resources */,
 				18D2DA4626E8DF4500451E98 /* CuriosityViewCell.xib in Resources */,
-				18CBA34826E95FEB006F639F /* menus.json in Resources */,
 				18D2D9F526E8B6C500451E98 /* LaunchScreen.storyboard in Resources */,
 				18D2D9F226E8B6C500451E98 /* Assets.xcassets in Resources */,
 				18614E5326EE606A00B01A17 /* Colors.xcassets in Resources */,
 				1836F63626E94D95003E28C0 /* Detail.storyboard in Resources */,
 				184B58D726EA5EFC0088A200 /* FilterCell.xib in Resources */,
-				18CBA34726E95FEB006F639F /* collegetown.json in Resources */,
 				18D2D9F026E8B6C500451E98 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

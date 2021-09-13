@@ -23,7 +23,7 @@ class OnboardingPageViewController: UIPageViewController {
             OnboardingInfoViewController(
                 title: "Nasa App",
                 subtitle: "For Appcent Case.",
-                animation: "menus"
+                animation: "space"
             ),
             OnboardingInfoViewController(
                 title: "Nasa Photos",
