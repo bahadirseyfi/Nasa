@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import Nasa
 
 class NasaTests: XCTestCase {
 
