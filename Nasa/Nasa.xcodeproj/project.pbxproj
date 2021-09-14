@@ -20,7 +20,6 @@
 		184B58D726EA5EFC0088A200 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184B58D526EA5EFC0088A200 /* FilterCell.xib */; };
 		184B58DA26EB89760088A200 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 184B58D926EB89760088A200 /* NVActivityIndicatorView */; };
 		184B58DD26EB89BC0088A200 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184B58DC26EB89BC0088A200 /* ProgressView.swift */; };
-		18614E4626EDDC5900B01A17 /* SpiritViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18614E4526EDDC5900B01A17 /* SpiritViewModel.swift */; };
 		18614E4B26EE00D100B01A17 /* filterBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18614E4A26EE00D100B01A17 /* filterBottomSheetViewController.swift */; };
 		18614E5326EE606A00B01A17 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18614E5226EE606A00B01A17 /* Colors.xcassets */; };
 		189044A526EEA91700B89693 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189044A426EEA91700B89693 /* DetailViewModel.swift */; };
@@ -42,6 +41,10 @@
 		18CFCBF426EFBC490080D50C /* SpiritInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBF326EFBC490080D50C /* SpiritInteractor.swift */; };
 		18CFCBF626EFBC540080D50C /* SpiritPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBF526EFBC540080D50C /* SpiritPresenter.swift */; };
 		18CFCBF826EFBC5B0080D50C /* SpiritRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBF726EFBC5B0080D50C /* SpiritRouter.swift */; };
+		18CFCBFB26EFC67C0080D50C /* CuriorsityPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBFA26EFC67C0080D50C /* CuriorsityPresenterTests.swift */; };
+		18CFCBFD26EFCE8A0080D50C /* MockCuriorsityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBFC26EFCE8A0080D50C /* MockCuriorsityViewController.swift */; };
+		18CFCBFF26EFD02F0080D50C /* MockCuriorsityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CFCBFE26EFD02F0080D50C /* MockCuriorsityInteractor.swift */; };
+		18CFCC0126F019440080D50C /* Response.json in Resources */ = {isa = PBXBuildFile; fileRef = 18CFCC0026F019440080D50C /* Response.json */; };
 		18D2D9E926E8B6C500451E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2D9E826E8B6C500451E98 /* AppDelegate.swift */; };
 		18D2D9F026E8B6C500451E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D2D9EE26E8B6C500451E98 /* Main.storyboard */; };
 		18D2D9F226E8B6C500451E98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D2D9F126E8B6C500451E98 /* Assets.xcassets */; };
@@ -108,7 +111,6 @@
 		184B58D426EA5EFC0088A200 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		184B58D526EA5EFC0088A200 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
 		184B58DC26EB89BC0088A200 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		18614E4526EDDC5900B01A17 /* SpiritViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritViewModel.swift; sourceTree = "<group>"; };
 		18614E4A26EE00D100B01A17 /* filterBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterBottomSheetViewController.swift; sourceTree = "<group>"; };
 		18614E5226EE606A00B01A17 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		189044A426EEA91700B89693 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -128,6 +130,10 @@
 		18CFCBF326EFBC490080D50C /* SpiritInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritInteractor.swift; sourceTree = "<group>"; };
 		18CFCBF526EFBC540080D50C /* SpiritPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritPresenter.swift; sourceTree = "<group>"; };
 		18CFCBF726EFBC5B0080D50C /* SpiritRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritRouter.swift; sourceTree = "<group>"; };
+		18CFCBFA26EFC67C0080D50C /* CuriorsityPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriorsityPresenterTests.swift; sourceTree = "<group>"; };
+		18CFCBFC26EFCE8A0080D50C /* MockCuriorsityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCuriorsityViewController.swift; sourceTree = "<group>"; };
+		18CFCBFE26EFD02F0080D50C /* MockCuriorsityInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCuriorsityInteractor.swift; sourceTree = "<group>"; };
+		18CFCC0026F019440080D50C /* Response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Response.json; sourceTree = "<group>"; };
 		18D2D9E526E8B6C500451E98 /* Nasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D2D9E826E8B6C500451E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18D2D9EF26E8B6C500451E98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -290,10 +296,9 @@
 		18614E5026EE5D1700B01A17 /* Spirit */ = {
 			isa = PBXGroup;
 			children = (
-				18D2DA2126E8B89B00451E98 /* SpiritViewController.swift */,
-				18614E4526EDDC5900B01A17 /* SpiritViewModel.swift */,
-				18CFCBF326EFBC490080D50C /* SpiritInteractor.swift */,
 				18614E4926EE00C200B01A17 /* FilterController */,
+				18D2DA2126E8B89B00451E98 /* SpiritViewController.swift */,
+				18CFCBF326EFBC490080D50C /* SpiritInteractor.swift */,
 				18CFCBF526EFBC540080D50C /* SpiritPresenter.swift */,
 				18CFCBF726EFBC5B0080D50C /* SpiritRouter.swift */,
 			);
@@ -376,6 +381,16 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		18CFCBF926EFC5BD0080D50C /* CuriorsityTests */ = {
+			isa = PBXGroup;
+			children = (
+				18CFCBFA26EFC67C0080D50C /* CuriorsityPresenterTests.swift */,
+				18CFCBFC26EFCE8A0080D50C /* MockCuriorsityViewController.swift */,
+				18CFCBFE26EFD02F0080D50C /* MockCuriorsityInteractor.swift */,
+			);
+			path = CuriorsityTests;
+			sourceTree = "<group>";
+		};
 		18D2D9DC26E8B6C400451E98 = {
 			isa = PBXGroup;
 			children = (
@@ -416,8 +431,10 @@
 		18D2D9FE26E8B6C600451E98 /* NasaTests */ = {
 			isa = PBXGroup;
 			children = (
+				18CFCBF926EFC5BD0080D50C /* CuriorsityTests */,
 				18D2D9FF26E8B6C600451E98 /* NasaTests.swift */,
 				18D2DA0126E8B6C600451E98 /* Info.plist */,
+				18CFCC0026F019440080D50C /* Response.json */,
 			);
 			path = NasaTests;
 			sourceTree = "<group>";
@@ -625,6 +642,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CFCC0126F019440080D50C /* Response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,7 +739,6 @@
 				184B58D126EA599B0088A200 /* Filter.swift in Sources */,
 				18CBA34C26E97DEF006F639F /* UICollectionViewCell+Extension.swift in Sources */,
 				184B58DD26EB89BC0088A200 /* ProgressView.swift in Sources */,
-				18614E4626EDDC5900B01A17 /* SpiritViewModel.swift in Sources */,
 				184B58D626EA5EFC0088A200 /* FilterCell.swift in Sources */,
 				18D2DA4826E8E00100451E98 /* UINib+Extension.swift in Sources */,
 			);
@@ -732,6 +749,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D2DA0026E8B6C600451E98 /* NasaTests.swift in Sources */,
+				18CFCBFD26EFCE8A0080D50C /* MockCuriorsityViewController.swift in Sources */,
+				18CFCBFB26EFC67C0080D50C /* CuriorsityPresenterTests.swift in Sources */,
+				18CFCBFF26EFD02F0080D50C /* MockCuriorsityInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
