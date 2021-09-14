@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		12F992F34308F10A242438D0 /* Pods_Nasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C712486AC1FC64C13F6150C /* Pods_Nasa.framework */; };
+		18242B8726F0BBC300FDDD2A /* OpportunityPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18242B8626F0BBC300FDDD2A /* OpportunityPresenterTests.swift */; };
+		18242B8926F0BBDD00FDDD2A /* MockOpportunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18242B8826F0BBDD00FDDD2A /* MockOpportunityViewController.swift */; };
+		18242B8B26F0BBE900FDDD2A /* MockOpportunityInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18242B8A26F0BBE900FDDD2A /* MockOpportunityInteractor.swift */; };
+		18242B8E26F0BC8600FDDD2A /* MockSpiritInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18242B8D26F0BC8600FDDD2A /* MockSpiritInteractor.swift */; };
+		18242B9026F0BC9100FDDD2A /* MockSpiritViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18242B8F26F0BC9100FDDD2A /* MockSpiritViewController.swift */; };
+		18242B9226F0BC9E00FDDD2A /* SpiritPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18242B9126F0BC9E00FDDD2A /* SpiritPresenterTest.swift */; };
+		18242B9526F0BD4D00FDDD2A /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18242B9426F0BD4D00FDDD2A /* BaseTest.swift */; };
+		18242B9726F0BE8F00FDDD2A /* AccessibilityIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18242B9626F0BE8F00FDDD2A /* AccessibilityIdentifiable.swift */; };
+		18242B9A26F0C13A00FDDD2A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18242B9826F0C12000FDDD2A /* TestHelper.swift */; };
+		18242B9C26F0C1F400FDDD2A /* CuriorsityPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18242B9B26F0C1F400FDDD2A /* CuriorsityPage.swift */; };
+		18242B9E26F0C32700FDDD2A /* CuriorsityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18242B9D26F0C32700FDDD2A /* CuriorsityTest.swift */; };
+		18242BA226F0C4D200FDDD2A /* XCUIElement+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18242BA126F0C4D200FDDD2A /* XCUIElement+Extension.swift */; };
 		1836F62F26E91BCF003E28C0 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1836F62E26E91BCF003E28C0 /* AlertManager.swift */; };
 		1836F63326E93497003E28C0 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1836F63226E93497003E28C0 /* OnboardingPageViewController.swift */; };
 		1836F63626E94D95003E28C0 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1836F63526E94D95003E28C0 /* Detail.storyboard */; };
@@ -102,6 +114,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18242B8626F0BBC300FDDD2A /* OpportunityPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityPresenterTests.swift; sourceTree = "<group>"; };
+		18242B8826F0BBDD00FDDD2A /* MockOpportunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOpportunityViewController.swift; sourceTree = "<group>"; };
+		18242B8A26F0BBE900FDDD2A /* MockOpportunityInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOpportunityInteractor.swift; sourceTree = "<group>"; };
+		18242B8D26F0BC8600FDDD2A /* MockSpiritInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSpiritInteractor.swift; sourceTree = "<group>"; };
+		18242B8F26F0BC9100FDDD2A /* MockSpiritViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSpiritViewController.swift; sourceTree = "<group>"; };
+		18242B9126F0BC9E00FDDD2A /* SpiritPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritPresenterTest.swift; sourceTree = "<group>"; };
+		18242B9426F0BD4D00FDDD2A /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
+		18242B9626F0BE8F00FDDD2A /* AccessibilityIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiable.swift; sourceTree = "<group>"; };
+		18242B9826F0C12000FDDD2A /* TestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
+		18242B9B26F0C1F400FDDD2A /* CuriorsityPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriorsityPage.swift; sourceTree = "<group>"; };
+		18242B9D26F0C32700FDDD2A /* CuriorsityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriorsityTest.swift; sourceTree = "<group>"; };
+		18242BA126F0C4D200FDDD2A /* XCUIElement+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIElement+Extension.swift"; sourceTree = "<group>"; };
 		1836F62E26E91BCF003E28C0 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		1836F63226E93497003E28C0 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		1836F63526E94D95003E28C0 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
@@ -198,6 +222,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18242B8526F0BB9F00FDDD2A /* OpportunityTests */ = {
+			isa = PBXGroup;
+			children = (
+				18242B8626F0BBC300FDDD2A /* OpportunityPresenterTests.swift */,
+				18242B8826F0BBDD00FDDD2A /* MockOpportunityViewController.swift */,
+				18242B8A26F0BBE900FDDD2A /* MockOpportunityInteractor.swift */,
+			);
+			path = OpportunityTests;
+			sourceTree = "<group>";
+		};
+		18242B8C26F0BC7200FDDD2A /* SpiritTests */ = {
+			isa = PBXGroup;
+			children = (
+				18242B8D26F0BC8600FDDD2A /* MockSpiritInteractor.swift */,
+				18242B8F26F0BC9100FDDD2A /* MockSpiritViewController.swift */,
+				18242B9126F0BC9E00FDDD2A /* SpiritPresenterTest.swift */,
+			);
+			path = SpiritTests;
+			sourceTree = "<group>";
+		};
+		18242B9326F0BD3B00FDDD2A /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				18242B9426F0BD4D00FDDD2A /* BaseTest.swift */,
+				18242B9D26F0C32700FDDD2A /* CuriorsityTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		18242B9F26F0C4AB00FDDD2A /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				18242B9B26F0C1F400FDDD2A /* CuriorsityPage.swift */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		18242BA026F0C4BF00FDDD2A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				18242BA126F0C4D200FDDD2A /* XCUIElement+Extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		1836F62D26E91ABC003E28C0 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +318,7 @@
 			children = (
 				1836F63E26E951E4003E28C0 /* AnimationUtility.swift */,
 				184B58DC26EB89BC0088A200 /* ProgressView.swift */,
+				18242B9626F0BE8F00FDDD2A /* AccessibilityIdentifiable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -431,6 +501,8 @@
 		18D2D9FE26E8B6C600451E98 /* NasaTests */ = {
 			isa = PBXGroup;
 			children = (
+				18242B8C26F0BC7200FDDD2A /* SpiritTests */,
+				18242B8526F0BB9F00FDDD2A /* OpportunityTests */,
 				18CFCBF926EFC5BD0080D50C /* CuriorsityTests */,
 				18D2D9FF26E8B6C600451E98 /* NasaTests.swift */,
 				18D2DA0126E8B6C600451E98 /* Info.plist */,
@@ -442,7 +514,11 @@
 		18D2DA0926E8B6C600451E98 /* NasaUITests */ = {
 			isa = PBXGroup;
 			children = (
+				18242B9F26F0C4AB00FDDD2A /* Page */,
+				18242B9326F0BD3B00FDDD2A /* Test */,
 				18D2DA0A26E8B6C600451E98 /* NasaUITests.swift */,
+				18242B9826F0C12000FDDD2A /* TestHelper.swift */,
+				18242BA026F0C4BF00FDDD2A /* Utils */,
 				18D2DA0C26E8B6C600451E98 /* Info.plist */,
 			);
 			path = NasaUITests;
@@ -712,6 +788,7 @@
 				18D2DA3526E8D17700451E98 /* RoverModel.swift in Sources */,
 				18D2DA2926E8BC6200451E98 /* UIColor+ColorScheme.swift in Sources */,
 				18D2DA2526E8B8FF00451E98 /* UINavigationBarAppearance+Nasa.swift in Sources */,
+				18242B9726F0BE8F00FDDD2A /* AccessibilityIdentifiable.swift in Sources */,
 				18CBA33926E95A8E006F639F /* OnboardingInfoViewController.swift in Sources */,
 				18D2DA4B26E8ECE800451E98 /* CuriosityCellViewModel.swift in Sources */,
 				18D2DA4126E8D9BA00451E98 /* UIViewController+Extension.swift in Sources */,
@@ -748,9 +825,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18242B8926F0BBDD00FDDD2A /* MockOpportunityViewController.swift in Sources */,
 				18D2DA0026E8B6C600451E98 /* NasaTests.swift in Sources */,
+				18242B8B26F0BBE900FDDD2A /* MockOpportunityInteractor.swift in Sources */,
+				18242B8726F0BBC300FDDD2A /* OpportunityPresenterTests.swift in Sources */,
 				18CFCBFD26EFCE8A0080D50C /* MockCuriorsityViewController.swift in Sources */,
+				18242B9226F0BC9E00FDDD2A /* SpiritPresenterTest.swift in Sources */,
+				18242B8E26F0BC8600FDDD2A /* MockSpiritInteractor.swift in Sources */,
 				18CFCBFB26EFC67C0080D50C /* CuriorsityPresenterTests.swift in Sources */,
+				18242B9026F0BC9100FDDD2A /* MockSpiritViewController.swift in Sources */,
 				18CFCBFF26EFD02F0080D50C /* MockCuriorsityInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -759,6 +842,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18242B9A26F0C13A00FDDD2A /* TestHelper.swift in Sources */,
+				18242B9C26F0C1F400FDDD2A /* CuriorsityPage.swift in Sources */,
+				18242B9526F0BD4D00FDDD2A /* BaseTest.swift in Sources */,
+				18242BA226F0C4D200FDDD2A /* XCUIElement+Extension.swift in Sources */,
+				18242B9E26F0C32700FDDD2A /* CuriorsityTest.swift in Sources */,
 				18D2DA0B26E8B6C600451E98 /* NasaUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,13 +1,13 @@
 //
-//  MockCuriorsityViewController.swift
+//  MockSpiritViewController.swift
 //  NasaTests
 //
-//  Created by bahadir on 13.09.2021.
+//  Created by bahadir on 14.09.2021.
 //
 
 @testable import Nasa
 
-final class MockCuriorsityViewController: CuriosityViewInterface {
+final class MockSpiritViewController: SpiritViewInterface {
 
     var invokedPrepareNavigation = false
     var invokedPrepareNavigationCount = 0
@@ -32,6 +32,4 @@ final class MockCuriorsityViewController: CuriosityViewInterface {
         invokedReloadData = true
         invokedReloadDataCount += 1
     }
-    
-    func setAccessibilityIdentifiers() {}
 }

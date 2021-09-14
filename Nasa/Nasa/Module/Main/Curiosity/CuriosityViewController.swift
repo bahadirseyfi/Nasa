@@ -9,7 +9,7 @@ import UIKit
 import Hero
 import CoreAPI
 
-protocol CuriosityViewInterface: AnyObject {
+protocol CuriosityViewInterface: AccessibilityIdentifiable, AnyObject {
     func prepareNavigation()
     func prepareCollectionView()
     func reloadData()
@@ -150,6 +150,8 @@ extension CuriosityViewController: UICollectionViewDataSource {
                     cell.isAnimated = true
                 })
             }
+            
+            setAccessibilityIdentifiers(view: cell, index: indexPath.item)
             return cell
         }
     }
@@ -272,5 +274,17 @@ extension CuriosityViewController {
         yPosition -= bottomOffset
         
         return yPosition
+    }
+}
+
+extension CuriosityViewController {
+    func setAccessibilityIdentifiers() {
+        photosCollectionView.accessibilityIdentifier = "photosCollectionView"
+        filterCollectionView.accessibilityIdentifier = "filterCollectionView"
+        navigationController?.navigationBar.accessibilityIdentifier = "curiorstiyNavigationBar"
+    }
+    
+    func setAccessibilityIdentifiers(view: UIView, index: Int) {
+        view.accessibilityIdentifier = "photosCell_\(index)"
     }
 }

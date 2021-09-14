@@ -102,6 +102,7 @@ extension CuriosityPresenter: CuriosityPresenterInterface {
         view?.prepareNavigation()
         fetchPhotos()
         view?.reloadData()
+        view?.setAccessibilityIdentifiers()
     }
     
     func showLoading() {
